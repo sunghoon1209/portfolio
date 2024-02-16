@@ -26,7 +26,7 @@ a {
 }
 
 body {
-  background-color: #1E1E1E;
+  background-color: #EEEEEE;
   font-family: "KIMM_Bold", sans-serif;
   letter-spacing: -0.0625em;
 }
@@ -131,7 +131,7 @@ ul.text .up div {
   position: relative;
   height: 100px;
   width: 100px;
-  color: #3F9CCB;
+  color: #000;
   display: flex;
   display: flex;
   justify-content: center;
@@ -148,7 +148,7 @@ ul.text .down div {
   position: relative;
   height: 100px;
   width: 100px;
-  color: #6A9955;
+  color: #000;
   display: flex;
   display: flex;
   justify-content: center;
@@ -165,7 +165,7 @@ ul.text .myName {
 }
 ul.text .myName div {
   position: relative;
-  color: #CE764E;
+  color: #000;
   display: flex;
   display: flex;
   justify-content: center;
@@ -212,8 +212,8 @@ section#port .portInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  color: #D4D4D4;
-  padding-bottom: 20px;
+  color: #111;
+  margin-top: 60px;
 }
 section#port .portInner .works {
   margin-top: 20px;
@@ -226,6 +226,7 @@ section#port .portInner .works {
 section#port .portInner .works .worksBox {
   background-color: #fff;
   height: 180px;
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   position: relative;
 }
@@ -401,10 +402,11 @@ section#port .portInner .works .worksBox .imgInner .iconBox div p {
   justify-content: space-between;
   align-items: center;
 }
-.modal .topmenu img {
+.modal .topmenu > img {
   width: 24px;
   height: 24px;
   margin-left: 10px;
+  opacity: 0;
 }
 .modal .topmenu h2.modalName {
   text-align: center;
@@ -442,8 +444,8 @@ main section#skills .skillsInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  color: #D4D4D4;
-  padding-bottom: 20px;
+  color: #111;
+  margin-top: 60px;
 }
 main section#skills .skillsInner .skills {
   width: 100%;
@@ -464,9 +466,7 @@ main section#skills .skillsInner .skills .card {
   background-color: #fff;
   transform-style: preserve-3d;
   display: inline-grid;
-  border-radius: 10px;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
   line-height: 1.6;
   position: relative;
   z-index: 9;
@@ -479,23 +479,22 @@ main section#skills .skillsInner .skills .card > * {
   grid-area: 1/1/1/1;
 }
 main section#skills .skillsInner .skills .card > div {
+  width: 100%;
   height: 280px;
-  border-radius: 10px;
   backface-visibility: hidden;
 }
 main section#skills .skillsInner .skills .card .front {
-  border-radius: 10px;
+  width: 100%;
   height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
 }
 main section#skills .skillsInner .skills .card .front img {
   width: 200px;
 }
 main section#skills .skillsInner .skills .card .back {
-  border-radius: 10px;
+  width: 100%;
   overflow: hidden;
   height: 280px;
   transform: rotateY(180deg);
@@ -503,44 +502,15 @@ main section#skills .skillsInner .skills .card .back {
   align-items: center;
   justify-content: center;
   position: relative;
-  position: relative;
+  background-color: #3C3C3C;
   /* 추가 */
-}
-main section#skills .skillsInner .skills .card .back:before {
-  content: "";
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 250%;
-  height: 250%;
-  background: linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
-  animation: spin 2s linear infinite;
-  z-index: -2;
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-    filter: hue-rotate(360deg);
-  }
-}
-main section#skills .skillsInner .skills .card .back:after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
-  background: #fff;
-  z-index: -1;
 }
 main section#skills .skillsInner .skills .card .back .backInner {
   width: 90%;
   height: 90%;
 }
 main section#skills .skillsInner .skills .card .back .backInner p {
+  color: #D7BA7D;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
@@ -549,6 +519,10 @@ main section#skills .skillsInner .skills .card .back .backInner ul li {
   font-size: 16px;
   font-weight: 500;
   text-align: left;
+  color: #D4D4D4;
+}
+main section#skills .skillsInner .skills .card .back .backInner ul li span {
+  color: #3F9CCB;
 }
 main section#skills .skillsInner .tools {
   display: flex;
@@ -591,24 +565,29 @@ main section#me {
 }
 main section#me .meInner {
   width: 1280px;
-  height: 880px;
+  height: 100%;
   position: relative;
-  margin: 100px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin: 0px auto;
 }
 main section#me .meInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  color: #D4D4D4;
-  padding-bottom: 20px;
+  color: #111;
+  margin-top: 60px;
 }
-main section#me .meInner .me {
-  height: 70%;
+main section#me .meInner .meIntro {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
   display: flex;
-  justify-content: space-between;
+}
+main section#me .meInner .meIntro p {
+  width: 50%;
+  color: #111;
+  font-size: 28px;
+  line-height: 1.6;
+  text-align: center;
 }
 
 main section#Contact {
@@ -628,8 +607,8 @@ main section#Contact .contactInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  color: #D4D4D4;
-  padding-bottom: 20px;
+  color: #111;
+  margin-top: 60px;
 }
 main section#Contact .contactInner .contactMe {
   height: 70%;

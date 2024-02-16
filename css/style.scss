@@ -77,7 +77,7 @@ h1.logo {
     transition: 0.5s;
     display: flex;
     align-items: center;
-    display: none;   
+    display: none;
 
 
     img {
@@ -104,7 +104,7 @@ header {
     transition: 0.8s;
     align-items: center;
     justify-content: center;
-   
+
 
 
     .headerInner {
@@ -135,10 +135,10 @@ header {
         ul.submenu {
             display: flex;
             // width: 100%;
-           
+
             flex-direction: column;
             justify-content: space-between;
-           
+
             text-align: left;
 
 
@@ -180,7 +180,7 @@ ul.text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
 
     .up {
         display: flex;
@@ -190,7 +190,7 @@ ul.text {
             height: 100px;
             width: 100px;
             // background: #000;
-            color: #3F9CCB;
+            color: #000;
             display: flex;
             display: flex;
             justify-content: center;
@@ -215,7 +215,7 @@ ul.text {
             width: 100px;
             // background: #000;
 
-            color: #6A9955;
+            color: #000;
             display: flex;
             display: flex;
             justify-content: center;
@@ -244,7 +244,7 @@ ul.text {
             // width: 400px;
             // background: #000;
 
-            color: #CE764E;
+            color: #000;
             display: flex;
             display: flex;
             justify-content: center;
@@ -321,7 +321,7 @@ section#port {
                 height: 180px;
                 // border-radius: 10px;
 
-                // box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
+                box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
                 overflow: hidden;
                 position: relative;
 
@@ -347,7 +347,7 @@ section#port {
                     background: rgba(0, 0, 0, 0.8);
                     transform: translate(-50%, -50%);
                     transition: 0.7s;
-                    
+
 
 
                 }
@@ -552,17 +552,17 @@ section#port {
         flex-direction: column;
 
         .cover {
-            
-            img       {
+
+            img {
                 width: 600px;
                 height: 400px;
                 display: block;
             }
         }
 
-        .contactD{
+        .contactD {
             margin-top: 20px;
-                      
+
         }
     }
 }
@@ -578,10 +578,11 @@ section#port {
         justify-content: space-between;
         align-items: center;
 
-        img {
+        >img {
             width: 24px;
             height: 24px;
             margin-left: 10px;
+            opacity: 0;
         }
 
 
@@ -655,13 +656,14 @@ main section#skills {
                 background-color: #fff;
                 transform-style: preserve-3d;
                 display: inline-grid;
-                border-radius: 10px;
-                box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+                // border-radius: 10px;
+                box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
                 // border: 3px solid transparent;
-                box-sizing: border-box;
+                // box-sizing: border-box;
                 line-height: 1.6;
                 position: relative;
                 z-index: 9;
+
                 // overflow: hidden;
 
 
@@ -679,25 +681,24 @@ main section#skills {
                 }
 
                 >div {
-
+                    width: 100%;
                     height: 280px;
-                    border-radius: 10px;
+                    // border-radius: 10px;
 
                     backface-visibility: hidden;
                 }
 
 
                 .front {
-                    // width: 500px;
-                    border-radius: 10px;
-
+                    // // width: 500px;
+                    // border-radius: 10px;
+                    width: 100%;
                     // background-color: blue;
                     height: 280px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    box-sizing: border-box;
-
+                    
 
                     img {
                         width: 200px;
@@ -705,7 +706,8 @@ main section#skills {
                 }
 
                 .back {
-                    border-radius: 10px;
+                    width: 100%;
+                    // border-radius: 10px;
                     overflow: hidden;
                     // width: 500px;
                     height: 280px;
@@ -714,61 +716,16 @@ main section#skills {
                     align-items: center;
                     justify-content: center;
                     position: relative;
-
-                    &:before {
-                        content: "";
-                        position: absolute;
-                        // left: 50%;
-                        // top: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 250%;
-                        height: 250%;
-                        background: linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
-                        animation: spin 2s linear infinite;
-                        z-index: -2;
-
-
-                    }
-
-                    @keyframes spin {
-                        0% {
-                            transform: rotate(0deg);
-                            filter: hue-rotate(0deg);
-                        }
-
-                        100% {
-                            transform: rotate(360deg);
-                            filter: hue-rotate(360deg);
-                        }
-
-                    }
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        top: 6px;
-                        left: 6px;
-                        right: 6px;
-                        bottom: 6px;
-                        background: #fff;
-                        z-index: -1;
-
-                    }
-
-
-
-                    position: relative;
+                    background-color: #3C3C3C;
 
                     .backInner {
                         width: 90%;
                         height: 90%;
 
-
                         // justify-content: space-between;
 
-
-
                         p {
+                            color: #D7BA7D;
                             text-align: center;
                             font-size: 20px;
                             font-weight: 600;
@@ -780,7 +737,12 @@ main section#skills {
                                 font-size: 16px;
                                 font-weight: 500;
                                 text-align: left;
+                                color: #D4D4D4;
                                 // margin-top: 4px;
+
+                                span{
+                                    color: #3F9CCB;
+                                }
                             }
                         }
                     }
@@ -856,14 +818,13 @@ main section#me {
 
 
 
+
     .meInner {
         width: $grid;
-        height: 880px;
+        height: 100%;
         position: relative;
-        margin: 100px auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        margin: 0px auto;
+
 
 
 
@@ -872,11 +833,19 @@ main section#me {
 
         }
 
-        .me {
-            height: 70%;
+        .meIntro {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
             display: flex;
-            justify-content: space-between;
-
+            p {
+                width: 50%;
+                color: #111;
+                font-size: 28px;
+                line-height: 1.6;
+                text-align: center;
+                
+            }
         }
     }
 }
