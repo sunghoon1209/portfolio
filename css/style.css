@@ -26,7 +26,7 @@ a {
 }
 
 body {
-  background-color: #fff;
+  background-color: #1E1E1E;
   font-family: "KIMM_Bold", sans-serif;
   letter-spacing: -0.0625em;
 }
@@ -58,7 +58,7 @@ h1.logo:hover {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 9999;
+  z-index: 998;
   cursor: pointer;
   transition: 0.5s;
   display: flex;
@@ -86,21 +86,19 @@ header {
   justify-content: center;
 }
 header .headerInner {
-  width: 100%;
+  width: 50%;
   height: 100%;
   background-color: #fff;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 header .headerInner ul.submenu {
   display: flex;
-  width: 100%;
-  height: 50%;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
+  text-align: left;
 }
 header .headerInner ul.submenu a {
   font-size: 8rem;
@@ -110,13 +108,12 @@ header .headerInner ul.submenu a {
 main section#main {
   width: 100%;
   height: 1080px;
-  background-color: #fff;
   transition: 0.7s;
   position: relative;
   z-index: 9999;
 }
 main section#main .mainInner {
-  width: 66.6667%;
+  width: 1280px;
   height: 1080px;
   margin: 0 auto;
 }
@@ -134,7 +131,7 @@ ul.text .up div {
   position: relative;
   height: 100px;
   width: 100px;
-  color: #000;
+  color: #3F9CCB;
   display: flex;
   display: flex;
   justify-content: center;
@@ -151,12 +148,29 @@ ul.text .down div {
   position: relative;
   height: 100px;
   width: 100px;
-  color: #000;
+  color: #6A9955;
   display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 46px;
+  cursor: pointer;
+  margin: 0 4px;
+  border-radius: 20px;
+}
+ul.text .myName {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+ul.text .myName div {
+  position: relative;
+  color: #CE764E;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 64px;
   cursor: pointer;
   margin: 0 4px;
   border-radius: 20px;
@@ -183,37 +197,244 @@ ul.text input[type=checkbox]:checked ~ div {
   }
 }
 
-main section#me {
+section#port {
   width: 100%;
+  padding-top: 100px;
+  position: relative;
   height: 1080px;
 }
-main section#me .meInner {
-  width: 66.6667%;
-  height: 880px;
-  position: relative;
-  margin: 100px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+section#port .portInner {
+  width: 1280px;
+  height: 100%;
+  margin: 0px auto;
 }
-main section#me .meInner .pagename {
+section#port .portInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  color: #000;
+  color: #D4D4D4;
+  padding-bottom: 20px;
 }
-main section#me .meInner .me {
-  height: 70%;
+section#port .portInner .works {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  align-content: space-between;
+  justify-content: space-between;
+}
+section#port .portInner .works .worksBox {
+  background-color: #fff;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+section#port .portInner .works .worksBox img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+section#port .portInner .works .worksBox:hover > .imgInner {
+  top: 50%;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, -50%);
+  transition: 0.7s;
+}
+section#port .portInner .works .worksBox .imgInner {
+  position: absolute;
+  left: 50%;
+  top: -200px;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.7s;
+}
+section#port .portInner .works .worksBox .imgInner h3 {
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-size: 1.5rem;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  color: #fff;
+  text-align: center;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox a {
+  color: #fff;
+  opacity: 0.7;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox a:hover {
+  opacity: 1;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox a i {
+  font-size: 1rem;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox a p {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox div {
+  color: #fff;
+  opacity: 0.7;
+  cursor: pointer;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox div:hover {
+  opacity: 1;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox div i {
+  font-size: 1rem;
+}
+section#port .portInner .works .worksBox .imgInner .iconBox div p {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
+/*모달창*/
+.modal {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1280px;
+  height: 700px;
+  background-color: #1E1E1E;
+  z-index: 9999;
+  position: absolute;
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
+}
+.modal .siteDetails {
+  display: flex;
+  margin-top: 80px;
+  height: 580px;
+}
+.modal .siteDetails .siteCover {
+  width: 50%;
+  position: relative;
+  height: 100%;
+}
+.modal .siteDetails .siteCover .site {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.modal .siteDetails .siteCover .site img {
+  width: 400px;
+  height: 280px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.modal .siteDetails .siteCover .site > div {
+  color: #6A9955;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.modal .siteDetails .siteCover .site > div a {
+  color: #D4D4D4;
+}
+.modal .siteDetails .siteCover .site > div span {
+  margin-left: 100px;
+  color: #D4D4D4;
+}
+
+/* 모달창 배경*/
+.modalbg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 9999px;
+  top: 0;
+  display: none;
+  z-index: 99;
+}
+
+/*자세히보기 설명항목*/
+.modal .siteDetails .des {
+  width: 50%;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.modal .siteDetails .des::-webkit-scrollbar {
+  display: none;
+}
+.modal .siteDetails .des > div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.modal .siteDetails .des > div .desname {
+  font-size: 20px;
+  color: #3F9CCB;
+}
+.modal .siteDetails .des .prdes {
+  width: 90%;
+  margin-bottom: 20px;
+  color: #D4D4D4;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+.modal .siteDetails .des .prdes .cover img {
+  width: 600px;
+  height: 400px;
+  display: block;
+}
+.modal .siteDetails .des .prdes .contactD {
+  margin-top: 20px;
+}
+
+/*xbtn*/
+.modal .topmenu {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  background-color: #3C3C3C;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+.modal .topmenu img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+.modal .topmenu h2.modalName {
+  text-align: center;
+  color: #E0B014;
+  font-weight: normal;
+  font-size: 32px;
+}
+.modal .topmenu .xbtn {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.modal .topmenu .xbtn img {
+  width: 12px;
+  height: 12px;
+}
+
+.html,
+.css,
+.jquery,
+.javascript {
+  color: #CE764E;
+  margin-top: 2px;
 }
 
 main section#skills {
   width: 100%;
-  height: 1080px;
+  padding-top: 100px;
 }
 main section#skills .skillsInner {
-  width: 66.6667%;
+  width: 1280px;
   height: 100%;
   margin: 0px auto;
 }
@@ -221,7 +442,8 @@ main section#skills .skillsInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  color: #000;
+  color: #D4D4D4;
+  padding-bottom: 20px;
 }
 main section#skills .skillsInner .skills {
   width: 100%;
@@ -281,15 +503,15 @@ main section#skills .skillsInner .skills .card .back {
   align-items: center;
   justify-content: center;
   position: relative;
+  position: relative;
   /* 추가 */
 }
 main section#skills .skillsInner .skills .card .back:before {
   content: "";
   position: absolute;
-  left: -50%;
-  top: -50%;
-  width: 200%;
-  height: 200%;
+  transform: translate(-50%, -50%);
+  width: 250%;
+  height: 250%;
   background: linear-gradient(233deg, #e56420, #c22525, #3d9c31, #37bbde);
   animation: spin 2s linear infinite;
   z-index: -2;
@@ -320,53 +542,73 @@ main section#skills .skillsInner .skills .card .back .backInner {
 }
 main section#skills .skillsInner .skills .card .back .backInner p {
   text-align: center;
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 8px;
 }
 main section#skills .skillsInner .skills .card .back .backInner ul li {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 500;
   text-align: left;
-  margin-top: 6px;
 }
 main section#skills .skillsInner .tools {
   display: flex;
-  height: 30%;
-  justify-content: center;
-  gap: 10px;
-  align-items: center;
-  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  margin-bottom: 100px;
   position: relative;
 }
 main section#skills .skillsInner .tools .iconbox {
   display: flex;
   background-color: #fff;
   border-radius: 50%;
-  height: 180px;
-  width: 180px;
+  height: 240px;
+  width: 19%;
   justify-content: center;
-  gap: 10px;
   align-items: center;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
   opacity: 0.5;
   transition: 0.5s;
-  flex-direction: column;
+  margin-bottom: 12px;
 }
 main section#skills .skillsInner .tools .iconbox:hover {
   opacity: 1;
-  z-index: 99;
-  margin-bottom: 100px;
-  border: 3px solid #BBC8F2;
+  z-index: 9;
   box-sizing: border-box;
 }
 main section#skills .skillsInner .tools .iconbox img {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
 }
 main section#skills .skillsInner .tools .iconbox p {
   width: 100px;
   text-align: center;
+}
+
+main section#me {
+  width: 100%;
+  height: 1080px;
+}
+main section#me .meInner {
+  width: 1280px;
+  height: 880px;
+  position: relative;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main section#me .meInner .pagename {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #D4D4D4;
+  padding-bottom: 20px;
+}
+main section#me .meInner .me {
+  height: 70%;
+  display: flex;
+  justify-content: space-between;
 }
 
 main section#Contact {
@@ -374,7 +616,7 @@ main section#Contact {
   height: 1080px;
 }
 main section#Contact .contactInner {
-  width: 66.6667%;
+  width: 1280px;
   height: 880px;
   position: relative;
   margin: 100px auto;
@@ -386,7 +628,8 @@ main section#Contact .contactInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
-  color: #000;
+  color: #D4D4D4;
+  padding-bottom: 20px;
 }
 main section#Contact .contactInner .contactMe {
   height: 70%;

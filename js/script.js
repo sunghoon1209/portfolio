@@ -24,6 +24,8 @@ $(document).ready(function () {
 
 
     });
+
+
     // input값 실시간 변경
     $("#name, #email, #subject, #message").on("propertychange change paste input", function () {
         var nameValue = $("#name").val();
@@ -42,7 +44,145 @@ $(document).ready(function () {
             $("#btn").removeClass("buttonon");
         }
     });
+    // 자세히보기 버튼 클릭시
+    $(".detailsGroundX").on("click", function () {
 
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalGround").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+
+    $(".detailsDev").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modaldev").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+    $(".detailsPort").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalPort").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+
+
+    $(".detailsGucci").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalGucci").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+
+    $(".detailsSamsung").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalSamsung").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+    $(".detailsHanhwa").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalHanhwa").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+    $(".detailsItsix").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalItsix").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+    $(".detailsHpoint").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalHpoint").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+    $(".details3d").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modal3d").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+
+    $(".detailsSamyang").on("click", function () {
+
+        // 스크롤 고정
+        $("body").css("overflow", "hidden");
+        // 모달창오픈
+        $(".modalSamyang").css("display", "block");
+
+        // 햄버거메뉴 숨기기
+        $(".hbm").css("display", "none");
+    });
+    // 모달창 열릴때 화면 y축 좌표고정
+    $(".details").on("click", function () {
+
+        // 스크롤 고정
+        $('html, body').animate({
+            scrollTop: 1080
+        }, 400)
+
+
+    });
+
+
+
+
+    $(".xbtn").on("click", function () {
+
+        $("body").css("overflow", "")
+        $(".modalGround").css("display", "");
+
+        // 헴버거메뉴 보이기
+        $(".hbm").css("display", "");
+    });
+
+    // 모달창 오픈일때 배경 누르면
+
+    $(".modalbg").on("click", function () {
+        $(".modal").css("display", "");
+        $("body").css("overflow", "")
+        $(".modalbg").css("display", "");
+        // 헴버거메뉴 보이기
+        $(".hbm").css("display", "");
+
+    });
 
 
 });
@@ -98,21 +238,23 @@ function doAction() {
 
 
 
-// 마우스제어효과
-// 체크박스 변수설정
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // 체크박스 요소들을 가져옵니다.
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
     // 체크박스 선택 간격 (밀리초)
     const interval = 100;
-
     // 마우스 휠 이벤트 핸들러를 추가합니다.
-    document.addEventListener('wheel', function (event) {
-        // 마우스 휠이 아래로 스크롤되었는지 확인합니다.
-        const isScrollingDown = event.deltaY > 0;
 
-        // 체크박스를 하나씩 선택하거나 선택 해제합니다.
+    document.addEventListener('wheel', function (event) {
+        // 마우스 휠이 아래로 스크롤
+        const isScrollingDown = event.deltaY > 0;
+        const isScrollingUp = event.deltaY < 0;
+
+        // 체크박스를 하나씩 선택
         checkboxes.forEach(function (checkbox, index) {
             // 체크박스의 현재 상태를 가져옵니다.
             const isChecked = checkbox.checked;
@@ -127,16 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }, interval * index);
                     return;
                 }
-            }
-            /*else { // 마우스 휠을 위로 스크롤할 때
-                // 체크박스가 선택되어 있으면 선택 해제합니다.
-                if (isChecked) {
-                    setTimeout(function() {
-                        checkbox.checked = false;
-                    }, interval * index);
-                    return;
-                }
-            }*/
+            } 
         });
     });
 });
