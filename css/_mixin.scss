@@ -26,6 +26,7 @@
 @mixin pageInner{
     width: $grid;
     height: 100%;
-    // position: relative;
+    position: relative;
     margin: 0px auto;
-}
+
+  }

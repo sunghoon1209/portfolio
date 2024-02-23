@@ -305,18 +305,19 @@ section#port {
         .works {
             // width: 100%; 
             margin-top: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            // grid-template-rows: 50px 50px;
-            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+           
             align-content: space-between;
             justify-content: space-between;
 
 
             .worksBox {
+                
                 background-color: #fff;
-                // flex:1 0 calc(33.33% - 20px);  
-                // width: 24%;
+                margin-bottom: 18px;  
+                width: 24%;
+                // flex: 1;
                 // box-sizing: border-box;
                 height: 180px;
                 // border-radius: 10px;
@@ -366,7 +367,7 @@ section#port {
                     transition: 0.7s;
 
 
-                    h3 {
+                    a {
                         color: #fff;
                         text-align: center;
                         // margin-top: 20px;
@@ -380,29 +381,11 @@ section#port {
                         width: 70%;
 
                         // margin: 3.5% auto 0px;
-                        justify-content: space-between;
-                        color: #fff;
+                        justify-content: center;
                         // margin-top: 40px;
 
                         text-align: center;
 
-                        a {
-                            color: #fff;
-                            opacity: 0.7;
-
-                            &:hover {
-                                opacity: 1;
-                            }
-
-                            i {
-                                font-size: 1rem;
-                            }
-
-                            p {
-                                margin-top: 12px;
-                                font-size: 1rem;
-                            }
-                        }
 
                         div {
                             color: #fff;
@@ -445,7 +428,7 @@ section#port {
     z-index: 9999;
     position: absolute;
     box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
-    // display: none;
+    display: none;
     // overflow: hidden;
 
 
@@ -531,15 +514,17 @@ section#port {
     }
 
     >div {
-        display: flex;
+        // display: flex;
         gap: 10px;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
+        margin-top: 20px;
 
         .desname {
             font-size: 20px;
             color: #3F9CCB;
 
         }
+
     }
 
     // 프로젝트소개 및 주요기능 설명
@@ -610,12 +595,11 @@ section#port {
     }
 }
 
-.html,
-.css,
-.jquery,
-.javascript {
-    color: #CE764E;
-    margin-top: 2px;
+.sort1,
+.sort2
+ {
+    color: #fff;
+    margin-top: 8px;
 }
 
 // skills
@@ -698,7 +682,7 @@ main section#skills {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    
+
 
                     img {
                         width: 200px;
@@ -740,7 +724,7 @@ main section#skills {
                                 color: #D4D4D4;
                                 // margin-top: 4px;
 
-                                span{
+                                span {
                                     color: #3F9CCB;
                                 }
                             }
@@ -838,12 +822,34 @@ main section#me {
             transform: translateY(-50%);
             top: 50%;
             display: flex;
+            justify-content: space-between;
+
+
+            // align-items: center;
             p {
-                width: 50%;
-                color: #111;
-                font-size: 28px;
+
+
+
+
+                &:nth-child(1) {
+                    width: 49%;
+                    color: #111;
+                    font-size: 28px;
+                    line-height: 1.6;
+                    text-align: center;
+                }
+
+            }
+
+            div {
+                text-align: left;    
+                width: 49%;
+                font-size: 20px;
                 line-height: 1.6;
-                text-align: center;
+              
+               
+
+
                 
             }
         }

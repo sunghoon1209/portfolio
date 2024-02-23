@@ -26,7 +26,7 @@ a {
 }
 
 body {
-  background-color: #EEEEEE;
+  background-color: #fff;
   font-family: "KIMM_Bold", sans-serif;
   letter-spacing: -0.0625em;
 }
@@ -206,6 +206,7 @@ section#port {
 section#port .portInner {
   width: 1280px;
   height: 100%;
+  position: relative;
   margin: 0px auto;
 }
 section#port .portInner .pagename {
@@ -217,14 +218,15 @@ section#port .portInner .pagename {
 }
 section#port .portInner .works {
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
   align-content: space-between;
   justify-content: space-between;
 }
 section#port .portInner .works .worksBox {
   background-color: #fff;
+  margin-bottom: 18px;
+  width: 24%;
   height: 180px;
   box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
@@ -256,7 +258,7 @@ section#port .portInner .works .worksBox .imgInner {
   align-items: center;
   transition: 0.7s;
 }
-section#port .portInner .works .worksBox .imgInner h3 {
+section#port .portInner .works .worksBox .imgInner a {
   color: #fff;
   text-align: center;
   font-style: normal;
@@ -265,23 +267,8 @@ section#port .portInner .works .worksBox .imgInner h3 {
 section#port .portInner .works .worksBox .imgInner .iconBox {
   display: flex;
   width: 70%;
-  justify-content: space-between;
-  color: #fff;
+  justify-content: center;
   text-align: center;
-}
-section#port .portInner .works .worksBox .imgInner .iconBox a {
-  color: #fff;
-  opacity: 0.7;
-}
-section#port .portInner .works .worksBox .imgInner .iconBox a:hover {
-  opacity: 1;
-}
-section#port .portInner .works .worksBox .imgInner .iconBox a i {
-  font-size: 1rem;
-}
-section#port .portInner .works .worksBox .imgInner .iconBox a p {
-  margin-top: 12px;
-  font-size: 1rem;
 }
 section#port .portInner .works .worksBox .imgInner .iconBox div {
   color: #fff;
@@ -311,6 +298,7 @@ section#port .portInner .works .worksBox .imgInner .iconBox div p {
   z-index: 9999;
   position: absolute;
   box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
+  display: none;
 }
 .modal .siteDetails {
   display: flex;
@@ -367,9 +355,8 @@ section#port .portInner .works .worksBox .imgInner .iconBox div p {
   display: none;
 }
 .modal .siteDetails .des > div {
-  display: flex;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 .modal .siteDetails .des > div .desname {
   font-size: 20px;
@@ -423,12 +410,10 @@ section#port .portInner .works .worksBox .imgInner .iconBox div p {
   height: 12px;
 }
 
-.html,
-.css,
-.jquery,
-.javascript {
-  color: #CE764E;
-  margin-top: 2px;
+.sort1,
+.sort2 {
+  color: #fff;
+  margin-top: 8px;
 }
 
 main section#skills {
@@ -438,6 +423,7 @@ main section#skills {
 main section#skills .skillsInner {
   width: 1280px;
   height: 100%;
+  position: relative;
   margin: 0px auto;
 }
 main section#skills .skillsInner .pagename {
@@ -581,13 +567,20 @@ main section#me .meInner .meIntro {
   transform: translateY(-50%);
   top: 50%;
   display: flex;
+  justify-content: space-between;
 }
-main section#me .meInner .meIntro p {
-  width: 50%;
+main section#me .meInner .meIntro p:nth-child(1) {
+  width: 49%;
   color: #111;
   font-size: 28px;
   line-height: 1.6;
   text-align: center;
+}
+main section#me .meInner .meIntro div {
+  text-align: left;
+  width: 49%;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
 main section#Contact {
