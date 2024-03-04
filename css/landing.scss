@@ -1,0 +1,155 @@
+@import "./mixin";
+
+#left {
+    width: 0%;
+    height: 100vh;
+    background-color: #000;
+    position: absolute;
+    left: 0%;
+    transition: 1s;
+}
+#right{
+    width: 0%;
+    height: 100vh;
+    background-color: #000;
+    position: absolute;
+    right: 0%;
+    
+    transition: 1s;
+}
+
+section#main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    // background: url(../images/bg2.jpg)no-repeat center/cover;
+    // background-color: #000;
+    transition: 0.7s;
+    position: relative;
+    z-index: 9999;
+    overflow: hidden;
+ 
+    .mainInner {
+        width: $grid;
+        height: 1080px;
+        margin: 0 auto;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // position: relative;
+        
+
+
+    }
+}
+
+ul.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    .up {
+        display: flex;
+
+        div {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            // background: #000;
+            // color: #000;
+            display: flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            cursor: pointer;
+            margin: 0 4px;
+            border-radius: 20px;
+            // box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+            //   4px 4px 6px rgba(0, 0, 0, 0.2),
+            //   inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+            //   inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .down {
+        display: flex;
+
+        div {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            // background: #000;
+
+            // color: #000;
+            display: flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 46px;
+            cursor: pointer;
+            margin: 0 4px;
+            border-radius: 20px;
+            // box-shadow:
+            //  -1px -1px 4px rgba(255, 255, 255, 0.05),
+            //   4px 4px 6px rgba(0, 0, 0, 0.2),
+            //   inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+            //   inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .myName {
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+
+        div {
+
+            position: relative;
+
+            // width: 400px;
+            // background: #000;
+
+            // color: #000;
+            display: flex;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 64px;
+            cursor: pointer;
+            margin: 0 4px;
+            border-radius: 20px;
+        }
+    }
+
+
+    input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 80px;
+        width: 80px;
+        z-index: 100;
+    }
+
+    input[type="checkbox"]:checked~div {
+        // box-shadow:
+        // inset 0 0 2px rgba(255, 255, 255, 0.05),
+        // inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+        animation: color 2s linear infinite;
+    }
+
+    @keyframes color {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+}

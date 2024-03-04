@@ -1,11 +1,15 @@
 @charset "UTF-8";
-/* reset */
-/*나눔고딕*/
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
 @font-face {
   font-family: "KIMM_Bold";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2") format("woff2");
   font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "intelone-mono-font-family-regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 * {
@@ -39,6 +43,8 @@ body {
   overflow: hidden;
 }
 
+/* reset */
+/*나눔고딕*/
 /*로고*/
 h1.logo {
   display: none;
@@ -105,125 +111,33 @@ header .headerInner ul.submenu a {
   font-weight: 800;
 }
 
-main section#main {
-  width: 100%;
-  height: 1080px;
-  transition: 0.7s;
-  position: relative;
-  z-index: 9999;
-}
-main section#main .mainInner {
-  width: 1280px;
-  height: 1080px;
-  margin: 0 auto;
-}
-
-ul.text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-ul.text .up {
-  display: flex;
-}
-ul.text .up div {
-  position: relative;
-  height: 100px;
-  width: 100px;
-  color: #000;
-  display: flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5rem;
-  cursor: pointer;
-  margin: 0 4px;
-  border-radius: 20px;
-}
-ul.text .down {
-  display: flex;
-}
-ul.text .down div {
-  position: relative;
-  height: 100px;
-  width: 100px;
-  color: #000;
-  display: flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 46px;
-  cursor: pointer;
-  margin: 0 4px;
-  border-radius: 20px;
-}
-ul.text .myName {
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-}
-ul.text .myName div {
-  position: relative;
-  color: #000;
-  display: flex;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 64px;
-  cursor: pointer;
-  margin: 0 4px;
-  border-radius: 20px;
-}
-ul.text input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 80px;
-  width: 80px;
-  z-index: 100;
-}
-ul.text input[type=checkbox]:checked ~ div {
-  color: #fff;
-  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
-  animation: color 2s linear infinite;
-}
-@keyframes color {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-section#port {
+section#project {
   width: 100%;
   padding-top: 100px;
   position: relative;
   height: 1080px;
 }
-section#port .portInner {
+section#project .portInner {
   width: 1280px;
   height: 100%;
   position: relative;
   margin: 0px auto;
 }
-section#port .portInner .pagename {
+section#project .portInner .pagename {
   font-size: 3rem;
   font-weight: 600;
   text-align: center;
   color: #111;
   margin-top: 60px;
 }
-section#port .portInner .works {
+section#project .portInner .works {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
   justify-content: space-between;
 }
-section#port .portInner .works .worksBox {
+section#project .portInner .works .worksBox {
   background-color: #fff;
   margin-bottom: 18px;
   width: 24%;
@@ -232,20 +146,20 @@ section#port .portInner .works .worksBox {
   overflow: hidden;
   position: relative;
 }
-section#port .portInner .works .worksBox img {
+section#project .portInner .works .worksBox img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
 }
-section#port .portInner .works .worksBox:hover > .imgInner {
+section#project .portInner .works .worksBox:hover > .imgInner {
   top: 50%;
   left: 50%;
   background: rgba(0, 0, 0, 0.8);
   transform: translate(-50%, -50%);
   transition: 0.7s;
 }
-section#port .portInner .works .worksBox .imgInner {
+section#project .portInner .works .worksBox .imgInner {
   position: absolute;
   left: 50%;
   top: -200px;
@@ -258,30 +172,30 @@ section#port .portInner .works .worksBox .imgInner {
   align-items: center;
   transition: 0.7s;
 }
-section#port .portInner .works .worksBox .imgInner a {
+section#project .portInner .works .worksBox .imgInner a {
   color: #fff;
   text-align: center;
   font-style: normal;
   font-size: 1.5rem;
 }
-section#port .portInner .works .worksBox .imgInner .iconBox {
+section#project .portInner .works .worksBox .imgInner .iconBox {
   display: flex;
   width: 70%;
   justify-content: center;
   text-align: center;
 }
-section#port .portInner .works .worksBox .imgInner .iconBox div {
+section#project .portInner .works .worksBox .imgInner .iconBox div {
   color: #fff;
   opacity: 0.7;
   cursor: pointer;
 }
-section#port .portInner .works .worksBox .imgInner .iconBox div:hover {
+section#project .portInner .works .worksBox .imgInner .iconBox div:hover {
   opacity: 1;
 }
-section#port .portInner .works .worksBox .imgInner .iconBox div i {
+section#project .portInner .works .worksBox .imgInner .iconBox div i {
   font-size: 1rem;
 }
-section#port .portInner .works .worksBox .imgInner .iconBox div p {
+section#project .portInner .works .worksBox .imgInner .iconBox div p {
   margin-top: 12px;
   font-size: 1rem;
 }
@@ -509,40 +423,6 @@ main section#skills .skillsInner .skills .card .back .backInner ul li {
 }
 main section#skills .skillsInner .skills .card .back .backInner ul li span {
   color: #3F9CCB;
-}
-main section#skills .skillsInner .tools {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  position: relative;
-}
-main section#skills .skillsInner .tools .iconbox {
-  display: flex;
-  background-color: #fff;
-  border-radius: 50%;
-  height: 240px;
-  width: 19%;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-  opacity: 0.5;
-  transition: 0.5s;
-  margin-bottom: 12px;
-}
-main section#skills .skillsInner .tools .iconbox:hover {
-  opacity: 1;
-  z-index: 9;
-  box-sizing: border-box;
-}
-main section#skills .skillsInner .tools .iconbox img {
-  width: 140px;
-  height: 140px;
-}
-main section#skills .skillsInner .tools .iconbox p {
-  width: 100px;
-  text-align: center;
 }
 
 main section#me {
