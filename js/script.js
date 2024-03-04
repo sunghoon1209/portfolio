@@ -54,7 +54,7 @@ $(document).ready(function () {
     $(".details").on("click", function () {
         // 스크롤 고정
         $('html, body').animate({
-            scrollTop: 1080
+            scrollTop: 0
         }, 400)
     });
 

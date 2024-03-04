@@ -69,7 +69,6 @@ h1.logo:hover {
   transition: 0.5s;
   display: flex;
   align-items: center;
-  display: none;
 }
 .hbm img {
   width: 40px;
@@ -113,7 +112,6 @@ header .headerInner ul.submenu a {
 
 section#project {
   width: 100%;
-  padding-top: 100px;
   position: relative;
   height: 1080px;
 }
@@ -131,7 +129,7 @@ section#project .portInner .pagename {
   margin-top: 60px;
 }
 section#project .portInner .works {
-  margin-top: 20px;
+  margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   align-content: space-between;
@@ -203,7 +201,7 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
 /*모달창*/
 .modal {
   position: fixed;
-  top: 100px;
+  top: 0px;
   left: 50%;
   transform: translateX(-50%);
   width: 1280px;
@@ -254,7 +252,7 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 9999px;
-  top: 0;
+  top: -100px;
   display: none;
   z-index: 99;
 }
@@ -332,7 +330,6 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
 
 main section#skills {
   width: 100%;
-  padding-top: 100px;
 }
 main section#skills .skillsInner {
   width: 1280px;
@@ -351,7 +348,7 @@ main section#skills .skillsInner .skills {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
 }
