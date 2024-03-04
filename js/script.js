@@ -10,8 +10,15 @@ document.addEventListener("mousemove", function(e) {
     cursor.style.left = mouseX + "px";
     cursor.style.top = mouseY + "px";
   });
-  
+
+
 $(document).ready(function () {
+    $("body a").on("mouseover", function(){
+        $(".custom-cursor").css('background-color','#F39C12');
+    });
+    $("body a").on("mouseout", function(){
+        $(".custom-cursor").css('background-color','');
+    });
     $('input:not(".pn"),textarea').focus(function () {
         // 포커스가 들어온 입력 필드 스타일 변경
         $(this).css('background-color', '#D9D9D9');

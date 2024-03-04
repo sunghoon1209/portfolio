@@ -56,10 +56,10 @@ html,body {
 // 커서
 .custom-cursor {
     position: fixed;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    background-color: #F39C12;
+    background-color: #3498DB;
     // opacity: 0.7;
     pointer-events: none; /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
     z-index: 9999999; /* 다른 요소 위에 표시하기 위해 z-index 설정 */
