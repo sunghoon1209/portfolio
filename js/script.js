@@ -1,3 +1,16 @@
+document.addEventListener("mousemove", function(e) {
+    // 마우스 위치 가져오기
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+  
+    // 커스텀 커서 요소 선택
+    var cursor = document.querySelector(".custom-cursor");
+  
+    // 커서 위치 설정
+    cursor.style.left = mouseX + "px";
+    cursor.style.top = mouseY + "px";
+  });
+  
 $(document).ready(function () {
     $('input:not(".pn"),textarea').focus(function () {
         // 포커스가 들어온 입력 필드 스타일 변경
@@ -145,7 +158,7 @@ $(document).ready(function () {
 
     addClickListener(".detailsPort", {
         modalName: "Portfolio",
-        modalURL: "https://sunghoon1209.github.io/portfolio/",
+        modalURL: "https://sunghoon1209.github.io/portfolio/landingpage",
         modalZip: "Portfolio.zip",
         modalSort1: "HTML5  SCSS  JQUERY  JAVASCRIPT",
         modalSort2: "Visual Studio Code Figma Animate Photoshop",
@@ -153,7 +166,7 @@ $(document).ready(function () {
         modalContactd: " contactMe 영역에서 Html에 Form 요소를 만들어서 이용자의 정보를 입력하고 전송하여 그대로 제 e-mail과 구글 스프레드시트에 저장되게 만들었습니다. 또한 사용자 경험을 늘리고자 현재 Focus된 Input에 배경색을 주었고 모든 Input이 작성되었을때 Send 버튼의 색을 변경되게 했습니다. 작성이 되지 않을 Input이 존재할 경우 alert창을 띄우며 해당 영역에 Focus를 주었습니다.",
         imgSrc2 : "./images/contactdetails.gif" ,
         imgSrc: "./images/portFolio.png",
-        linkHref: "https://sunghoon1209.github.io/portfolio/"
+        linkHref: "https://sunghoon1209.github.io/portfolio/landingpage"
     });
 
     addClickListener(".detailsGucci", {

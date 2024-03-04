@@ -35,11 +35,11 @@ h1.logo {
     top: 20px;
     right: 20px;
     z-index: 998;
-    cursor: pointer;
+    // cursor: pointer;
     transition: 0.5s;
     display: flex;
     align-items: center;
-    
+
 
 
     img {
@@ -48,6 +48,22 @@ h1.logo {
 
     }
 }
+html,body {
+    cursor: none;
+}
+
+
+// 커서
+.custom-cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #F39C12;
+    // opacity: 0.7;
+    pointer-events: none; /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
+    z-index: 9999999; /* 다른 요소 위에 표시하기 위해 z-index 설정 */
+  }
 
 /*header */
 
@@ -108,8 +124,30 @@ header {
             a {
                 font-size: 8rem;
                 font-weight: 800;
+                position: relative;
+                z-index: 2;
 
 
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 0%;
+                    height: 80%;
+                    background-color: #2ECC71;
+                    bottom: 30px;
+                    z-index: -1;
+
+                }
+
+                &:hover {
+                    &:before {
+                        content: "";
+                        transition: 0.7s;
+                        width: 100%;
+                    }
+
+                }
             }
         }
     }
@@ -138,15 +176,15 @@ section#project {
             margin-top: 80px;
             display: flex;
             flex-wrap: wrap;
-           
+
             align-content: space-between;
             justify-content: space-between;
 
 
             .worksBox {
-                
+
                 background-color: #fff;
-                margin-bottom: 18px;  
+                margin-bottom: 18px;
                 width: 24%;
                 // flex: 1;
                 // box-sizing: border-box;
@@ -221,7 +259,7 @@ section#project {
                         div {
                             color: #fff;
                             opacity: 0.7;
-                            cursor: pointer;
+                            // cursor: pointer;
 
                             &:hover {
                                 opacity: 1;
@@ -416,7 +454,7 @@ section#project {
 
         .xbtn {
             margin-right: 10px;
-            cursor: pointer;
+            // cursor: pointer;
 
             img {
                 width: 12px;
@@ -427,8 +465,7 @@ section#project {
 }
 
 .sort1,
-.sort2
- {
+.sort2 {
     color: #fff;
     margin-top: 8px;
 }
@@ -436,7 +473,7 @@ section#project {
 // skills
 main section#skills {
     width: 100%;
-    
+
 
     .skillsInner {
         @include pageInner();
@@ -568,7 +605,7 @@ main section#skills {
             }
         }
 
-       
+
     }
 }
 
@@ -615,15 +652,15 @@ main section#me {
             }
 
             div {
-                text-align: left;    
+                text-align: left;
                 width: 49%;
                 font-size: 20px;
                 line-height: 1.6;
-              
-               
 
 
-                
+
+
+
             }
         }
     }
@@ -699,7 +736,7 @@ main section#Contact {
                             font-family: 'KIMM_Bold';
                             letter-spacing: -0.0625em;
                             width: 90%;
-                            cursor: pointer;
+                            cursor: none;
                             color: #000;
                         }
 
@@ -724,7 +761,7 @@ main section#Contact {
 
                 .form {
 
-
+                    cursor: none;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -749,7 +786,7 @@ main section#Contact {
                         }
 
                         input {
-
+                            cursor: none;
                             border: none;
                             border-radius: 5px;
                             outline: none;
@@ -777,6 +814,7 @@ main section#Contact {
                                 border: none;
                                 border-radius: 5px;
                                 outline: none;
+                                cursor: none;
                                 width: 98%;
                                 height: 200px;
                                 padding-top: 10px;
@@ -798,6 +836,7 @@ main section#Contact {
                     }
 
                     .button {
+                        cursor: none;
                         width: 180px;
                         height: 50px;
                         opacity: 0.5;
@@ -819,7 +858,7 @@ main section#Contact {
                         margin: 0 auto;
                         overflow: hidden;
                         --a: initial;
-                        cursor: pointer;
+                        // cursor: pointer;
 
                         &::after {
                             content: "";
@@ -905,7 +944,7 @@ main section#Contact {
     margin: 0 auto;
     overflow: hidden;
     --a: initial;
-    cursor: pointer;
+    // cursor: pointer;
 
     &::after {
         content: "";

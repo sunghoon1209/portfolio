@@ -27,6 +27,7 @@ ul {
 a {
   text-decoration: none;
   color: #000;
+  cursor: none;
 }
 
 body {
@@ -65,7 +66,6 @@ h1.logo:hover {
   top: 20px;
   right: 20px;
   z-index: 998;
-  cursor: pointer;
   transition: 0.5s;
   display: flex;
   align-items: center;
@@ -73,6 +73,20 @@ h1.logo:hover {
 .hbm img {
   width: 40px;
   height: 40px;
+}
+
+html, body {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #F39C12;
+  pointer-events: none; /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
+  z-index: 9999999; /* 다른 요소 위에 표시하기 위해 z-index 설정 */
 }
 
 /*header */
@@ -108,6 +122,22 @@ header .headerInner ul.submenu {
 header .headerInner ul.submenu a {
   font-size: 8rem;
   font-weight: 800;
+  position: relative;
+  z-index: 2;
+}
+header .headerInner ul.submenu a:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 80%;
+  background-color: #2ECC71;
+  bottom: 30px;
+  z-index: -1;
+}
+header .headerInner ul.submenu a:hover:before {
+  content: "";
+  transition: 0.7s;
+  width: 100%;
 }
 
 section#project {
@@ -185,7 +215,6 @@ section#project .portInner .works .worksBox .imgInner .iconBox {
 section#project .portInner .works .worksBox .imgInner .iconBox div {
   color: #fff;
   opacity: 0.7;
-  cursor: pointer;
 }
 section#project .portInner .works .worksBox .imgInner .iconBox div:hover {
   opacity: 1;
@@ -315,7 +344,6 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
 }
 .modal .topmenu .xbtn {
   margin-right: 10px;
-  cursor: pointer;
 }
 .modal .topmenu .xbtn img {
   width: 12px;
@@ -511,7 +539,7 @@ main section#Contact .contactInner .contactMe .contact div a input {
   font-family: "KIMM_Bold";
   letter-spacing: -0.0625em;
   width: 90%;
-  cursor: pointer;
+  cursor: none;
   color: #000;
 }
 main section#Contact .contactInner .contactMe .contact div a i {
@@ -524,6 +552,7 @@ main section#Contact .contactInner .contactMe form {
   color: #000;
 }
 main section#Contact .contactInner .contactMe form .form {
+  cursor: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -544,6 +573,7 @@ main section#Contact .contactInner .contactMe form .form div label {
   margin-right: 10px;
 }
 main section#Contact .contactInner .contactMe form .form div input {
+  cursor: none;
   border: none;
   border-radius: 5px;
   outline: none;
@@ -566,6 +596,7 @@ main section#Contact .contactInner .contactMe form .form div:nth-child(4) textar
   border: none;
   border-radius: 5px;
   outline: none;
+  cursor: none;
   width: 98%;
   height: 200px;
   padding-top: 10px;
@@ -580,6 +611,7 @@ main section#Contact .contactInner .contactMe form .form div:nth-child(4) textar
   transition: 0.5s;
 }
 main section#Contact .contactInner .contactMe form .form .button {
+  cursor: none;
   width: 180px;
   height: 50px;
   opacity: 0.5;
@@ -600,7 +632,6 @@ main section#Contact .contactInner .contactMe form .form .button {
   margin: 0 auto;
   overflow: hidden;
   --a: initial;
-  cursor: pointer;
 }
 main section#Contact .contactInner .contactMe form .form .button::after {
   content: "";
@@ -666,7 +697,6 @@ main section#Contact .contactInner .contactMe form .form .button:hover {
   margin: 0 auto;
   overflow: hidden;
   --a: initial;
-  cursor: pointer;
 }
 .buttonon::after {
   content: "";
