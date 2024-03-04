@@ -25,6 +25,11 @@ $(document).ready(function () {
 
     });
 
+    $(".submenu li").on("click",function(){
+        $('.hbm>img').attr("src", "./images/hbmrev.gif")
+        $('header').css('right', '');
+    });
+
 
     // input값 실시간 변경
     $("#name, #email, #subject, #message").on("propertychange change paste input", function () {
@@ -44,103 +49,7 @@ $(document).ready(function () {
             $("#btn").removeClass("buttonon");
         }
     });
-    // // 자세히보기 버튼 클릭시
-    // $(".detailsGroundX").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modalGround").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-
-    // $(".detailsDev").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modaldev").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-    // $(".detailsPort").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modalPort").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-
-
-
-
-    // $(".detailsSamsung").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modalSamsung").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-    // $(".detailsHanhwa").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modalHanhwa").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-    // $(".detailsItsix").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modalItsix").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-    // $(".detailsHpoint").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modalHpoint").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-    // $(".details3d").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modal3d").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
-
-    // $(".detailsSamyang").on("click", function () {
-
-    //     // 스크롤 고정
-    //     $("body").css("overflow", "hidden");
-    //     // 모달창오픈
-    //     $(".modalSamyang").css("display", "block");
-
-    //     // 햄버거메뉴 숨기기
-    //     $(".hbm").css("display", "none");
-    // });
+ 
     // 모달창 열릴때 화면 y축 좌표고정
     $(".details").on("click", function () {
         // 스크롤 고정
@@ -173,6 +82,8 @@ $(document).ready(function () {
 
     });
 
+  
+
     $(".details").on("click", function () {
         // 스크롤 고정
         $("body").css("overflow", "hidden");
@@ -204,6 +115,7 @@ $(document).ready(function () {
         modalSort2: document.getElementById("sort2"),
         modalPrdes: document.getElementById("prdes"),
         modalContactd: document.getElementById("contactD")
+       
     };
 
     // 모달 내용 변경 함수
@@ -213,6 +125,7 @@ $(document).ready(function () {
             modalElements[key].textContent = data[key];
             $(".modalImg").attr("src", data.imgSrc);
             $(".link").attr("href", data.linkHref);
+            $(".detailsImg").attr("src", data.imgSrc2);
         });
         // 모달 이미지와 링크 속성 변경
         // let img = document.getElementById("modalImg");
@@ -238,7 +151,7 @@ $(document).ready(function () {
         modalSort2: "Visual Studio Code Figma Animate Photoshop",
         modalPrdes: "포트폴리오를 웹페이지형식으로 기획, 디자인, 코딩까지 전부 웹접근성과 사용자 경험,편의성에 맞춰서 제작하였습니다.",
         modalContactd: " contactMe 영역에서 Html에 Form 요소를 만들어서 이용자의 정보를 입력하고 전송하여 그대로 제 e-mail과 구글 스프레드시트에 저장되게 만들었습니다. 또한 사용자 경험을 늘리고자 현재 Focus된 Input에 배경색을 주었고 모든 Input이 작성되었을때 Send 버튼의 색을 변경되게 했습니다. 작성이 되지 않을 Input이 존재할 경우 alert창을 띄우며 해당 영역에 Focus를 주었습니다.",
-
+        imgSrc2 : "./images/contactdetails.gif" ,
         imgSrc: "./images/portFolio.png",
         linkHref: "https://sunghoon1209.github.io/portfolio/"
     });
@@ -247,11 +160,12 @@ $(document).ready(function () {
         modalName: "Gucci 클론 코딩",
         modalURL: "https://sunghoon1209.github.io/Gucci/",
         modalZip: "Gucci.zip",
-        modalSort1: "HTML5 SCSS JQUERY JAVASCRIPT",
+        modalSort1: "HTML5 SCSS JQUERY",
         modalSort2: "Visual Studio Code figma",
         modalPrdes: "구찌 홈페이지를 반응형을 제작하였습니다.",
         modalContactd: "구찌홈페이지기능설명추가",
         imgSrc: "./images/gucci.png",
+        imgSrc2: "./images/groundXdetails.gif",
         linkHref: "https://sunghoon1209.github.io/Gucci/"
     });
 
@@ -261,9 +175,10 @@ $(document).ready(function () {
         modalZip: "GroundX.zip",
         modalSort1: "HTML5 SCSS JQUERY JAVASCRIPT",
         modalSort2: "Visual Studio Code figma",
-        modalPrdes: "Ground X 홈페이지를 반응형으로 제작하였습니다.",
-        modalContactd: "GroundX홈페이지기능설명추가",
+        modalPrdes: "기존에 존재하는 Ground X 홈페이지를 반응형으로 제작하였습니다.",
+        modalContactd: "스크롤 이벤트로 nav메뉴 클릭시 해당 내용이 있는 곳으로 이동하고 메뉴의 색이 변하게 만들었습니다.",
         imgSrc: "./images/groundX.png",
+        imgSrc2: "./images/groundXdetails.gif",
         linkHref: "https://sunghoon1209.github.io/GroundX"
     });
 
@@ -341,37 +256,7 @@ function doAction() {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    // 체크박스 요소들을 가져옵니다.
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    // 체크박스 선택 간격 (밀리초)
-    const interval = 100;
-    // 마우스 휠 이벤트 핸들러를 추가합니다.
 
-    document.addEventListener('wheel', function (event) {
-        // 마우스 휠이 아래로 스크롤
-        const isScrollingDown = event.deltaY > 0;
-        const isScrollingUp = event.deltaY < 0;
-
-        // 체크박스를 하나씩 선택
-        checkboxes.forEach(function (checkbox, index) {
-            // 체크박스의 현재 상태를 가져옵니다.
-            const isChecked = checkbox.checked;
-
-            // 마우스 휠을 아래로 스크롤할 때
-            if (isScrollingDown) {
-                document.getElementById("main").style.backgroundColor = "#000";
-                // 체크박스가 선택되어 있지 않으면 선택합니다.
-                if (!isChecked) {
-                    setTimeout(function () {
-                        checkbox.checked = true;
-                    }, interval * index);
-                    return;
-                }
-            }
-        });
-    });
-});
 
 // 현재스크롤위치확인
 window.addEventListener("scroll", (event) => {
