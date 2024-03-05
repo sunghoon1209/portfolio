@@ -19,10 +19,10 @@ $(document).ready(function () {
     $("body a").on("mouseout", function(){
         $(".custom-cursor").css('background-color','');
     });
-    $("body").on("mouseout", function(){
+    $("html").on("mouseout", function(){
         $(".custom-cursor").css('opacity','0')
     });
-    $("body").on("mouseover", function(){
+    $("html").on("mouseover", function(){
         $(".custom-cursor").css('opacity','')
     });
 
