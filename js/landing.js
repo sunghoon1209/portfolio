@@ -39,6 +39,7 @@ function background() {
         document.getElementById("right").style.width = "50%";
 
         // 체크박스가 선택되어 있으면 선택 해제합니다.
+        // const interval = 50;
         if (isChecked) {
             setTimeout(function () {
                 checkbox.checked = false;

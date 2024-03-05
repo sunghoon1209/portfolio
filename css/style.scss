@@ -1,32 +1,10 @@
 @charset "utf-8";
-
-
-
 @import "./mixin";
-// #354649 / #6C7A89 / #A3C6C4 / #E0E7E9
-/* reset */
-
-
-/*나눔고딕*/
 
 
 
 
 
-/*로고*/
-h1.logo {
-    display: none;
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 999;
-    color: #000;
-
-    &:hover {
-        color: $sub;
-        transition: .5s;
-    }
-}
 
 /*햄버거메뉴*/
 .hbm {
@@ -48,7 +26,9 @@ h1.logo {
 
     }
 }
-html,body {
+
+html,
+body {
     cursor: none;
 }
 
@@ -61,9 +41,11 @@ html,body {
     border-radius: 50%;
     background-color: #3498DB;
     // opacity: 0.7;
-    pointer-events: none; /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
-    z-index: 9999999; /* 다른 요소 위에 표시하기 위해 z-index 설정 */
-  }
+    pointer-events: none;
+    /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
+    z-index: 9999999;
+    /* 다른 요소 위에 표시하기 위해 z-index 설정 */
+}
 
 /*header */
 
@@ -176,10 +158,8 @@ section#project {
             margin-top: 80px;
             display: flex;
             flex-wrap: wrap;
-
             align-content: space-between;
             justify-content: space-between;
-
 
             .worksBox {
 
@@ -293,7 +273,7 @@ section#project {
     transform: translateX(-50%);
     width: $grid;
     height: 700px;
-    background-color: #1E1E1E;
+    background-color: #EDEDED;
     z-index: 9999;
     position: absolute;
     box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
@@ -329,23 +309,28 @@ section#project {
                 // overflow: hidden;
 
                 img {
-                    width: 400px;
-                    height: 280px;
+                   
+                    width: 500px;
+                    height: 380px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
                 }
 
                 >div {
-                    color: #6A9955;
+                    color: #3498DB;
                     font-size: 14px;
                     margin-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
 
                     a {
-                        color: #D4D4D4;
+                        font-weight: 300;
+                        color: #000;
                     }
 
                     span {
                         margin-left: 100px;
-                        color: #D4D4D4;
+                        color: #000;
+                        font-weight: 700;
                     }
                 }
 
@@ -390,7 +375,7 @@ section#project {
 
         .desname {
             font-size: 20px;
-            color: #3F9CCB;
+            color: #2ECC71;
 
         }
 
@@ -400,10 +385,11 @@ section#project {
     .prdes {
         width: 90%;
         margin-bottom: 20px;
-        color: #D4D4D4;
+        color: #000;
         line-height: 1.6;
         display: flex;
         flex-direction: column;
+        font-weight: 300;
 
         .cover {
 
@@ -427,24 +413,19 @@ section#project {
         width: 100%;
         height: 40px;
         position: fixed;
-        background-color: #3C3C3C;
+        background-color: #EDEDED;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
-        >img {
-            width: 24px;
-            height: 24px;
-            margin-left: 10px;
-            opacity: 0;
-        }
+
 
 
 
         h2.modalName {
             text-align: center;
-
-            color: #E0B014;
+            width: 80%;
+            color: #000;
             font-weight: normal;
             font-size: 32px;
 
@@ -453,13 +434,21 @@ section#project {
         }
 
         .xbtn {
+            width: 20%;
             margin-right: 10px;
+            width: 18px;
+            height: 18px;
             // cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            // border: 1px solid #fff;
+            border-radius: 50%;
+            padding: 5px;
+            background-color: #EDEDED;
+            position: absolute;
+            right: 10px;
 
-            img {
-                width: 12px;
-                height: 12px;
-            }
         }
     }
 }
@@ -467,6 +456,8 @@ section#project {
 .sort1,
 .sort2 {
     color: #fff;
+    color: #000;
+    font-weight: 300;
     margin-top: 8px;
 }
 
@@ -568,7 +559,7 @@ main section#skills {
                     align-items: center;
                     justify-content: center;
                     position: relative;
-                    background-color: #3C3C3C;
+                    background-color: #EDEDED;
 
                     .backInner {
                         width: 90%;
@@ -577,7 +568,7 @@ main section#skills {
                         // justify-content: space-between;
 
                         p {
-                            color: #D7BA7D;
+                            color: #F39C12;
                             text-align: center;
                             font-size: 20px;
                             font-weight: 600;
@@ -589,11 +580,11 @@ main section#skills {
                                 font-size: 16px;
                                 font-weight: 500;
                                 text-align: left;
-                                color: #D4D4D4;
+                                color: #111;
                                 // margin-top: 4px;
 
                                 span {
-                                    color: #3F9CCB;
+                                    color: #111;
                                 }
                             }
                         }
@@ -629,39 +620,16 @@ main section#me {
 
         .meIntro {
             position: absolute;
-            transform: translateY(-50%);
-            top: 50%;
             display: flex;
             justify-content: space-between;
 
-
-            // align-items: center;
-            p {
-
-
-
-
-                &:nth-child(1) {
-                    width: 49%;
-                    color: #111;
-                    font-size: 28px;
-                    line-height: 1.6;
-                    text-align: center;
+            .meImage {
+                img {
+                    max-width: 50%;
+                    border-radius: 50px;
                 }
-
             }
 
-            div {
-                text-align: left;
-                width: 49%;
-                font-size: 20px;
-                line-height: 1.6;
-
-
-
-
-
-            }
         }
     }
 }
@@ -700,67 +668,25 @@ main section#Contact {
 
 
         .contactMe {
-            height: 70%;
+            
             display: flex;
             justify-content: space-between;
+            align-items: center;
 
-
-            .contact {
-                width: 50%;
-                height: 60%;
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-                justify-content: center;
-
-
-
-
-
-                div {
-                    font-weight: 500;
-                    font-size: 2rem;
-                    text-align: left;
-
-
-                    a {
-                        color: #000;
-
-                        input {
-                            border: none;
-                            outline: none;
-                            background-color: transparent;
-                            font-size: 2rem;
-                            font-weight: 500;
-                            margin-left: -10px;
-                            font-family: 'KIMM_Bold';
-                            letter-spacing: -0.0625em;
-                            width: 90%;
-                            cursor: none;
-                            color: #000;
-                        }
-
-                        i {
-                            // margin-left: 20px;
-                            margin-right: 20px;
-                            color: #000;
-
-
-                        }
-
-                    }
-
-
-                }
+            p {
+                width: 45%;
+                font-size: 40px;
+                text-align: center;
             }
+           
 
             form {
-                width: 50%;
-                height: 70%;
+              
+                width: 45%;
                 color: #000;
 
                 .form {
-
+                    
                     cursor: none;
                     display: flex;
                     flex-direction: column;
@@ -790,7 +716,7 @@ main section#Contact {
                             border: none;
                             border-radius: 5px;
                             outline: none;
-                            width: 98%;
+                            width: 100%;
                             height: 50px;
                             // background: url(../images/input.png) no-repeat center/cover;
                             background-color: #fff;
@@ -815,7 +741,7 @@ main section#Contact {
                                 border-radius: 5px;
                                 outline: none;
                                 cursor: none;
-                                width: 98%;
+                                width: 100%;
                                 height: 200px;
                                 padding-top: 10px;
                                 // background: url(../images/input.png) no-repeat center/cover;
@@ -839,51 +765,21 @@ main section#Contact {
                         cursor: none;
                         width: 180px;
                         height: 50px;
-                        opacity: 0.5;
+                        
                         transition: 0.5s;
                         outline: none;
-                        // background: url(../images/input.png) no-repeat center/cover;
-                        color: #fff;
+                        background-color: #fff;
+                        color: #000;
                         border: none;
                         border-radius: 5px;
                         font-family: 'KIMM_Bold';
                         letter-spacing: -0.0625em;
                         font-size: 1.5rem;
                         font-weight: 600;
-                        background-color: #000;
-                        position: relative;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        margin: 0 auto;
-                        overflow: hidden;
-                        --a: initial;
-                        // cursor: pointer;
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            top: var(--top);
-                            left: var(--left);
-                            width: var(--diameter);
-                            height: var(--diameter);
-                            transform: scale(0);
-                            background-color: rgba(255, 255, 255, 0.9);
-                            border-radius: 50%;
-                            pointer-events: none;
-                            animation: var(--a);
-                        }
-
-                        &:hover {
-                            background-color: #000;
-                        }
-
-                        @keyframes ripple-effect {
-                            100% {
-                                transform: scale(1);
-                                opacity: 0;
-                            }
-                        }
+                        border: 2px solid #000;
+                      
+                 
+                        
                     }
 
 
@@ -929,14 +825,14 @@ main section#Contact {
     transition: 0.5s;
     outline: none;
     // background: url(../images/input.png) no-repeat center/cover;
-    color: #fff;
+    // color: #fff;
     border: none;
     border-radius: 5px;
     font-family: 'KIMM_Bold';
     letter-spacing: -0.0625em;
     font-size: 1.5rem;
     font-weight: 600;
-    background-color: #000;
+    background-color: #F39C12;
     position: relative;
     display: flex;
     align-items: center;

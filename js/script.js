@@ -19,9 +19,18 @@ $(document).ready(function () {
     $("body a").on("mouseout", function(){
         $(".custom-cursor").css('background-color','');
     });
+    $("body").on("mouseout", function(){
+        $(".custom-cursor").css('opacity','0')
+    });
+    $("body").on("mouseover", function(){
+        $(".custom-cursor").css('opacity','')
+    });
+
     $('input:not(".pn"),textarea').focus(function () {
         // 포커스가 들어온 입력 필드 스타일 변경
-        $(this).css('background-color', '#D9D9D9');
+        // $(this).css('background-color', '#D9D9D9');
+        $(this).css('background-color', '#F39C12');
+        
     }).blur(function () {
         // 포커스가 빠져나간 입력 필드 스타일 원래대로 변경
         $(this).css('background-color', '');
@@ -213,6 +222,32 @@ $(document).ready(function () {
         imgSrc: "./images/dev.png",
         linkHref: "https://sunghoon1209.github.io/Devsisters"
     });
+    addClickListener(".detailsWeather", {
+        modalName: "날씨검색싸이트",
+        modalURL: "https://sunghoon1209.github.io/weather/",
+        modalZip: "weather.zip",
+        modalSort1: "HTML5 CSS3 JAVASCRIPT",
+        modalSort2: "Visual Studio Code ",
+        modalPrdes: "자바스크립트의 fetch 함수를 이용하여 검색창에 지역을 검색하면 해당 지역의 실시간 날씨 정보 api를 호출하여 기온,풍속,날씨를 알려주는 간단한 날씨검색사이트를 제작하였습니다. ",
+        modalContactd: " 호출한 데이터의 날씨에 따라 배경 테마 색을 약간 변경되게 만들었습니다. 예를 들어 받아온 데이터 중 날씨가 sunny인 경우 테마에 맞게 갱신되도록 제작하였습니다.  ",        
+        imgSrc: "./images/weather.png",
+        imgSrc2 : "./images/weatherdeatials.gif" ,
+        linkHref: "https://sunghoon1209.github.io/weather/"
+        
+    });
+    addClickListener(".deatilsPetfriends", {
+        modalName: "펫프렌즈",
+        modalURL: "https://sunghoon1209.github.io/petfriends/",
+        modalZip: "weather.zip",
+        modalSort1: "HTML5 SCSS JAVASCRIPT",
+        modalSort2: "Visual Studio Code ",
+        modalPrdes: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 디자인하여 코딩하였습니다.",
+        modalContactd: "장바구니에 추가 버튼을 활용하면 장바구니에 추가되며 추가된 물품의 합계 금액이 계산되어 하단에 보이게 제작하였습니다. ",        
+        imgSrc: "./images/petfriends.png",
+        imgSrc2 : "./images/petfriendsDetails.gif" ,
+        linkHref: "https://sunghoon1209.github.io/petfriends"
+        
+    });
 
 
 
@@ -282,15 +317,36 @@ function doAction() {
 window.addEventListener("scroll", (event) => {
     let scrollY = this.scrollY;
     console.log(scrollY);
-    var currentPosition = window.scrollY + window.innerHeight;
-    if (currentPosition >= 2000) {
+    let currentPosition = window.scrollY + window.innerHeight;
+    const interval = 50;
+    index = [1,2,3]
+    if (currentPosition >= 5000) {
         // 원하는 이벤트 실행
-        document.querySelector(".hbm").style.display = "block";
+        setTimeout(function () {
+            document.querySelector(".strong").style.color = "#F39C12";
+        
+        }, 500);
+            
+        
+        setTimeout(function () {
+        
+            document.querySelector(".strong2").style.color = "#F39C12";
+            
+        }, 1500);
+            
+        
+        setTimeout(function () {
+           
+            document.querySelector(".strong3").style.color = "#F39C12";
+        }, 2500);
+        return;      
+        
     }
 
-    if (currentPosition < 2000) {
+     
+   
 
-        document.querySelector(".hbm").style.display = "";
-    }
+   
 
 });
+
