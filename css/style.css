@@ -198,6 +198,25 @@ section#project .portInner .works .worksBox .imgInner a {
   text-align: center;
   font-style: normal;
   font-size: 1.5rem;
+  position: relative;
+}
+section#project .portInner .works .worksBox .imgInner a:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 80%;
+  background-color: #2ECC71;
+  bottom: 4px;
+  z-index: -1;
+}
+section#project .portInner .works .worksBox .imgInner a:hover {
+  color: #000;
+  transition: 0.7s;
+}
+section#project .portInner .works .worksBox .imgInner a:hover:before {
+  content: "";
+  transition: 0.7s;
+  width: 100%;
 }
 section#project .portInner .works .worksBox .imgInner .iconBox {
   display: flex;
