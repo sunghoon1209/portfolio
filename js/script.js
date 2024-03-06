@@ -271,6 +271,18 @@ $(document).ready(function () {
         imgSrc2: "./images/hpointDetails.gif",
         linkHref: "https://sunghoon1209.github.io/hpoint/"
     });
+    addClickListener(".details3d", {
+        modalName: "3D Site",
+        modalURL: " https://sunghoon1209.github.io/3D/",
+        modalZip: "Devsisters.zip",
+        modalSort1: "HTML5 CSS3 JAVASCRIPT",
+        modalSort2: "Visual Studio Code",
+        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
+        modalContactd: "스와이퍼 플러그인과 슬릭 플러그인을 활용해 ",
+        imgSrc: "./images/3d.gif",
+        imgSrc2: "./images/hpointDetails.gif",
+        linkHref: " https://sunghoon1209.github.io/3D/"
+    });
     addClickListener(".detailsWeather", {
         modalName: "날씨검색싸이트",
         modalURL: "http://so1091.dothome.co.kr/weather/",
