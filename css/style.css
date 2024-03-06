@@ -75,12 +75,12 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #3498DB;
+  background-color: #000080;
   pointer-events: none;
   /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
   z-index: 9999999;
   /* 다른 요소 위에 표시하기 위해 z-index 설정 */
-  transition: background-color 0.5s;
+  display: none;
 }
 .custom-cursor i {
   font-size: 20px;
@@ -95,6 +95,16 @@ body {
   100% {
     margin-top: 5px;
   }
+}
+
+.trail-item {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  background-color: #000080;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 9998; /* 커서보다 하나 아래에 표시되도록 */
 }
 
 /*header */
@@ -138,7 +148,7 @@ header .headerInner ul.submenu a:before {
   position: absolute;
   width: 0%;
   height: 80%;
-  background-color: #2ECC71;
+  background-color: #FFA500;
   bottom: 30px;
   z-index: -1;
 }
@@ -186,7 +196,8 @@ section#project .portInner .works .worksBox img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section#project .portInner .works .worksBox:hover > .imgInner {
   top: 50%;
@@ -690,4 +701,4 @@ main section#Contact .contactInner .contactMe form .form .button {
     transform: scale(1);
     opacity: 0;
   }
-}
+}/*# sourceMappingURL=style.css.map */

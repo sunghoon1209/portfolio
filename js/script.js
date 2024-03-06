@@ -1,15 +1,20 @@
 document.addEventListener("mousemove", function(e) {
     // 마우스 위치 가져오기
-    var mouseX = e.clientX;
-    var mouseY = e.clientY;
+    
+    let mouseX = e.clientX;
+    let mouseY = e.clientY;
   
     // 커스텀 커서 요소 선택
-    var cursor = document.querySelector(".custom-cursor");
+    let cursor = document.querySelector(".custom-cursor");
+
   
     // 커서 위치 설정
+    cursor.style.display = "block";
     cursor.style.left = mouseX + "px";
     cursor.style.top = mouseY + "px";
   });
+
+  
 
 
 $(document).ready(function () {
