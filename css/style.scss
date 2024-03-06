@@ -46,6 +46,24 @@ body {
     z-index: 9999999;
     /* 다른 요소 위에 표시하기 위해 z-index 설정 */
     transition: background-color 0.5s;
+
+    i{
+        font-size: 20px;
+        font-weight: bold;
+        color: #111;
+        animation: mousescroll 1s ease infinite;
+              
+    }
+    @keyframes mousescroll {
+        0%{
+            margin-top: 0px;
+        }
+
+        100%{
+            margin-top: 5px;
+           
+        }
+    }
 }
 
 /*header */
@@ -152,7 +170,7 @@ section#project {
         .pagename {
             @include pagename();
 
-            
+
         }
 
         .works {
@@ -225,7 +243,7 @@ section#project {
                         font-style: normal;
                         font-size: 1.5rem;
                         position: relative;
-                       
+
 
                         &:before {
                             content: "";
@@ -235,12 +253,13 @@ section#project {
                             background-color: #2ECC71;
                             bottom: 4px;
                             z-index: -1;
-        
+
                         }
-        
+
                         &:hover {
                             color: #000;
                             transition: 0.7s;
+
                             &:before {
                                 content: "";
                                 transition: 0.7s;
@@ -329,18 +348,30 @@ section#project {
                 transform: translate(-50%, -50%);
                 top: 50%;
                 left: 50%;
+
                 // width: 300px;
                 // height: 180px;
                 // overflow: hidden;
-
-                img {
-                   
+                .scroll {
                     width: 500px;
                     height: 380px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                    overflow: hidden;
+                    overflow-y: scroll;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    img {
+                        width: 100%;
+                        
+                    }
                 }
 
-                >div {
+
+
+                >div:not(.scroll) {
                     color: #3498DB;
                     font-size: 14px;
                     margin-top: 20px;
@@ -693,7 +724,7 @@ main section#Contact {
 
 
         .contactMe {
-            
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -703,15 +734,15 @@ main section#Contact {
                 font-size: 40px;
                 text-align: center;
             }
-           
+
 
             form {
-              
+
                 width: 45%;
                 color: #000;
 
                 .form {
-                    
+
                     cursor: none;
                     display: flex;
                     flex-direction: column;
@@ -790,7 +821,7 @@ main section#Contact {
                         cursor: none;
                         width: 180px;
                         height: 50px;
-                        
+
                         transition: 0.5s;
                         outline: none;
                         background-color: #fff;
@@ -802,9 +833,9 @@ main section#Contact {
                         font-size: 1.5rem;
                         font-weight: 600;
                         border: 2px solid #000;
-                      
-                 
-                        
+
+
+
                     }
 
 

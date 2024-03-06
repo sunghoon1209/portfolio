@@ -25,6 +25,14 @@ $(document).ready(function () {
     $("html").on("mouseover", function(){
         $(".custom-cursor").css('opacity','')
     });
+    $("div.scroll").on("mouseover",function(){
+        $(".custom-cursor").html(`<i class="fa-solid fa-computer-mouse-scrollwheel"></i>`);
+        $(".custom-cursor").css('background-color','transparent');
+    });
+    $("div.scroll").on("mouseleave",function(){
+        $(".custom-cursor").empty();
+        $(".custom-cursor").css('background-color','');
+    });
 
     $('input:not(".pn"),textarea').focus(function () {
         // 포커스가 들어온 입력 필드 스타일 변경
@@ -206,7 +214,7 @@ $(document).ready(function () {
         modalSort2: "Visual Studio Code figma",
         modalPrdes: "기존에 존재하는 Ground X 홈페이지를 반응형으로 제작하였습니다.",
         modalContactd: "스크롤 이벤트로 nav메뉴 클릭시 해당 내용이 있는 곳으로 이동하고 메뉴의 색이 변하게 만들었습니다.",
-        imgSrc: "./images/groundX.png",
+        imgSrc: "./images/groundXfull.png",
         imgSrc2: "./images/groundXdetails.gif",
         linkHref: "https://sunghoon1209.github.io/GroundX"
     });
@@ -305,7 +313,7 @@ $(document).ready(function () {
         modalSort2: "Visual Studio Code ",
         modalPrdes: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 디자인하여 코딩하였습니다.",
         modalContactd: "장바구니에 추가 버튼을 활용하면 장바구니에 추가되며 추가된 물품의 합계 금액이 계산되어 하단에 보이게 제작하였습니다. ",        
-        imgSrc: "./images/petfriends.png",
+        imgSrc: "./images/petfriend.png",
         imgSrc2 : "./images/petfriendsDetails.gif" ,
         linkHref: "https://sunghoon1209.github.io/petfriends"
         
