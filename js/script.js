@@ -192,9 +192,9 @@ $(document).ready(function () {
         modalSort1: "HTML5 SCSS JQUERY",
         modalSort2: "Visual Studio Code figma",
         modalPrdes: "구찌 홈페이지를 반응형을 제작하였습니다.",
-        modalContactd: "구찌홈페이지기능설명추가",
+        modalContactd: "비디오내용을 토글버튼 형식으로 제어하는 기능을 넣었습니다. ",
         imgSrc: "./images/gucci.png",
-        imgSrc2: "./images/groundXdetails.gif",
+        imgSrc2: "./images/guccidetails.gif",
         linkHref: "https://sunghoon1209.github.io/Gucci/"
     });
 
@@ -218,13 +218,62 @@ $(document).ready(function () {
         modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
         modalSort2: "Visual Studio Code figma",
         modalPrdes: "Devsisters의 홈페이지를 참고하여 유사성을 살려서 새롭게 코딩하였습니다.",
-        modalContactd: "GroundX홈페이지기능설명추가",
+        modalContactd: "마우스커서의 좌표값을 가져와서 버튼위에 올렸을때를 기준으로 리플효과를 넣었습니다. ",
         imgSrc: "./images/dev.png",
+        imgSrc2: "./images/devdetails.gif",
         linkHref: "https://sunghoon1209.github.io/Devsisters"
+    });
+    addClickListener(".detailsSamsung", {
+        modalName: "Samsung",
+        modalURL: "https://sunghoon1209.github.io/samsung/",
+        modalZip: "Devsisters.zip",
+        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
+        modalSort2: "Visual Studio Code",
+        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
+        modalContactd: " JQUERY 라이브러리를 사용하여 이미지 슬라이드를 쉽고 빠르게 적용하였습니다.",
+        imgSrc: "./images/samsung.png",
+        imgSrc2: "./images/samsungDetails.gif",
+        linkHref: "https://sunghoon1209.github.io/samsung/"
+    });
+    addClickListener(".detailsHanhwa", {
+        modalName: "Hanhwa",
+        modalURL: "https://sunghoon1209.github.io/hanhwa/",
+        modalZip: "Devsisters.zip",
+        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
+        modalSort2: "Visual Studio Code",
+        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
+        modalContactd: "WOW.js를 이용하여 스크롤시 Fade IN 기능을 쉽고 빠르게 적용하였습니다.",
+        imgSrc: "./images/hanhwa.png",
+        imgSrc2: "./images/hanhwaDetails.gif",
+        linkHref: "https://sunghoon1209.github.io/hanhwa/"
+    });
+    addClickListener(".detailsItsix", {
+        modalName: "ITSIX",
+        modalURL: "https://sunghoon1209.github.io/itsix/",
+        modalZip: "Devsisters.zip",
+        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
+        modalSort2: "Visual Studio Code",
+        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
+        modalContactd: "WOW.js를 이용하여 스크롤시 Fade IN 기능을 쉽고 빠르게 적용하였습니다.",
+        imgSrc: "./images/itsix.gif",
+        imgSrc2: "./images/hanhwaDetails.gif",
+        linkHref: "https://sunghoon1209.github.io/itsix/"
+    });
+    addClickListener(".detailsHpoint", {
+        modalName: "H.point",
+        modalURL: "https://sunghoon1209.github.io/hpoint/",
+        modalZip: "Devsisters.zip",
+        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
+        modalSort2: "Visual Studio Code",
+        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
+        modalContactd: "스와이퍼 플러그인과 슬릭 플러그인을 활용해 ",
+        imgSrc: "./images/hpoint.png",
+        imgSrc2: "./images/hpointDetails.gif",
+        linkHref: "https://sunghoon1209.github.io/hpoint/"
     });
     addClickListener(".detailsWeather", {
         modalName: "날씨검색싸이트",
-        modalURL: "https://sunghoon1209.github.io/weather/",
+        modalURL: "http://so1091.dothome.co.kr/weather/",
         modalZip: "weather.zip",
         modalSort1: "HTML5 CSS3 JAVASCRIPT",
         modalSort2: "Visual Studio Code ",
@@ -232,9 +281,10 @@ $(document).ready(function () {
         modalContactd: " 호출한 데이터의 날씨에 따라 배경 테마 색을 약간 변경되게 만들었습니다. 예를 들어 받아온 데이터 중 날씨가 sunny인 경우 테마에 맞게 갱신되도록 제작하였습니다.  ",        
         imgSrc: "./images/weather.png",
         imgSrc2 : "./images/weatherdeatials.gif" ,
-        linkHref: "https://sunghoon1209.github.io/weather/"
+        linkHref: "http://so1091.dothome.co.kr/weather/"
         
     });
+  
     addClickListener(".deatilsPetfriends", {
         modalName: "펫프렌즈",
         modalURL: "https://sunghoon1209.github.io/petfriends/",
