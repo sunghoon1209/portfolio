@@ -7,8 +7,8 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "KIMM_Bold";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2") format("woff2");
+  font-family: "KIMM_Light";
+  src: url("../font/KIMM_Light.woff") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
@@ -16,6 +16,12 @@
   font-family: "intelone-mono-font-family-regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 100, 200, 300, 400, 500, 600, 700, 800;
   font-style: normal;
 }
 * {
@@ -38,7 +44,6 @@ a {
 
 body {
   background-color: #fff;
-  font-family: "KIMM_Bold", sans-serif;
   letter-spacing: -0.0625em;
 }
 
@@ -68,6 +73,7 @@ body {
 html,
 body {
   cursor: none;
+  box-sizing: border-box;
 }
 
 .custom-cursor {
@@ -75,7 +81,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #000080;
+  background-color: #F39C12;
   pointer-events: none;
   /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
   z-index: 9999999;
@@ -88,13 +94,9 @@ body {
   color: #111;
   animation: mousescroll 1s ease infinite;
 }
-@keyframes mousescroll {
-  0% {
-    margin-top: 0px;
-  }
-  100% {
-    margin-top: 5px;
-  }
+
+.cursorShake {
+  animation: shake 2s ease infinite;
 }
 
 .trail-item {
@@ -104,7 +106,8 @@ body {
   background-color: #000080;
   opacity: 0.1;
   border-radius: 50%;
-  z-index: 9998; /* 커서보다 하나 아래에 표시되도록 */
+  z-index: 9998;
+  /* 커서보다 하나 아래에 표시되도록 */
 }
 
 /*header */
@@ -118,12 +121,13 @@ header {
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   z-index: 99;
   display: flex;
-  transition: 0.8s;
+  transition: 1.5s;
   align-items: center;
   justify-content: center;
+  font-family: "KIMM_Bold";
 }
 header .headerInner {
-  width: 50%;
+  width: 60%;
   height: 100%;
   background-color: #fff;
   margin: 0 auto;
@@ -148,7 +152,7 @@ header .headerInner ul.submenu a:before {
   position: absolute;
   width: 0%;
   height: 80%;
-  background-color: #FFA500;
+  background-color: #F39C12;
   bottom: 30px;
   z-index: -1;
 }
@@ -163,18 +167,32 @@ section#project {
   position: relative;
   height: 1080px;
 }
+section#project .pagename {
+  text-align: center;
+  margin-top: 60px;
+}
+section#project .pagename span {
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  color: #111;
+  font-family: "KIMM_Bold";
+  position: relative;
+}
+section#project .pagename span:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #F39C12;
+  top: 0px;
+  right: -20px;
+}
 section#project .portInner {
   width: 1280px;
   height: 100%;
   position: relative;
   margin: 0px auto;
-}
-section#project .portInner .pagename {
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  color: #111;
-  margin-top: 60px;
 }
 section#project .portInner .works {
   margin-top: 80px;
@@ -196,8 +214,7 @@ section#project .portInner .works .worksBox img {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 section#project .portInner .works .worksBox:hover > .imgInner {
   top: 50%;
@@ -219,30 +236,13 @@ section#project .portInner .works .worksBox .imgInner {
   align-items: center;
   transition: 0.7s;
 }
-section#project .portInner .works .worksBox .imgInner a {
+section#project .portInner .works .worksBox .imgInner h3 {
   color: #fff;
   text-align: center;
   font-style: normal;
   font-size: 1.5rem;
   position: relative;
-}
-section#project .portInner .works .worksBox .imgInner a:before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 80%;
-  background-color: #2ECC71;
-  bottom: 4px;
-  z-index: -1;
-}
-section#project .portInner .works .worksBox .imgInner a:hover {
-  color: #000;
-  transition: 0.7s;
-}
-section#project .portInner .works .worksBox .imgInner a:hover:before {
-  content: "";
-  transition: 0.7s;
-  width: 100%;
+  font-weight: normal;
 }
 section#project .portInner .works .worksBox .imgInner .iconBox {
   display: flex;
@@ -252,10 +252,6 @@ section#project .portInner .works .worksBox .imgInner .iconBox {
 }
 section#project .portInner .works .worksBox .imgInner .iconBox div {
   color: #fff;
-  opacity: 0.7;
-}
-section#project .portInner .works .worksBox .imgInner .iconBox div:hover {
-  opacity: 1;
 }
 section#project .portInner .works .worksBox .imgInner .iconBox div i {
   font-size: 1rem;
@@ -265,67 +261,6 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
   font-size: 1rem;
 }
 
-/*모달창*/
-.modal {
-  position: fixed;
-  top: 0px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 1280px;
-  height: 700px;
-  background-color: #EDEDED;
-  z-index: 9999;
-  position: absolute;
-  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
-  display: none;
-}
-.modal .siteDetails {
-  display: flex;
-  margin-top: 80px;
-  height: 580px;
-}
-.modal .siteDetails .siteCover {
-  width: 50%;
-  position: relative;
-  height: 100%;
-}
-.modal .siteDetails .siteCover .site {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-}
-.modal .siteDetails .siteCover .site .scroll {
-  width: 500px;
-  height: 380px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  overflow-y: scroll;
-}
-.modal .siteDetails .siteCover .site .scroll::-webkit-scrollbar {
-  display: none;
-}
-.modal .siteDetails .siteCover .site .scroll img {
-  width: 100%;
-}
-.modal .siteDetails .siteCover .site > div:not(.scroll) {
-  color: #3498DB;
-  font-size: 14px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-.modal .siteDetails .siteCover .site > div:not(.scroll) a {
-  font-weight: 300;
-  color: #000;
-}
-.modal .siteDetails .siteCover .site > div:not(.scroll) span {
-  margin-left: 100px;
-  color: #000;
-  font-weight: 700;
-}
-
-/* 모달창 배경*/
 .modalbg {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
@@ -336,96 +271,164 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
   z-index: 99;
 }
 
-/*자세히보기 설명항목*/
-.modal .siteDetails .des {
-  width: 50%;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-}
-.modal .siteDetails .des::-webkit-scrollbar {
+/*모달창*/
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1280px;
+  height: 720px;
+  background-color: #fff;
+  z-index: 9999;
+  position: absolute;
+  box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
   display: none;
-}
-.modal .siteDetails .des > div {
-  gap: 10px;
-  margin-top: 20px;
-}
-.modal .siteDetails .des > div .desname {
-  font-size: 20px;
-  color: #2ECC71;
-}
-.modal .siteDetails .des .prdes {
-  width: 90%;
-  margin-bottom: 20px;
-  color: #000;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  font-weight: 300;
-}
-.modal .siteDetails .des .prdes .cover img {
-  width: 600px;
-  height: 400px;
-  display: block;
-}
-.modal .siteDetails .des .prdes .contactD {
-  margin-top: 20px;
+  overflow: hidden;
 }
 
-/*xbtn*/
-.modal .topmenu {
-  width: 100%;
-  height: 40px;
-  position: fixed;
-  background-color: #EDEDED;
+.modal .xbtn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+.modal .xbtn img {
+  width: 36px;
+  height: 36px;
+}
+.modal .modalInner {
+  margin: 0 auto;
+  width: 1120px;
+  height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-.modal .topmenu h2.modalName {
-  text-align: center;
-  width: 80%;
-  color: #000;
-  font-weight: normal;
-  font-size: 32px;
+.modal .modalInner .leftContents {
+  width: 45%;
 }
-.modal .topmenu .xbtn {
-  width: 20%;
-  margin-right: 10px;
-  width: 18px;
-  height: 18px;
-  font-size: 20px;
+.modal .modalInner .leftContents .textCover {
+  display: flex;
+  margin-bottom: 20px;
+  height: 50px;
+  line-height: 50px;
+  justify-content: space-between;
+}
+.modal .modalInner .leftContents .textCover h2 {
+  font-family: "Noto Sans KR";
+  letter-spacing: -2%;
   font-weight: bold;
-  text-align: center;
-  border-radius: 50%;
-  padding: 5px;
-  background-color: #EDEDED;
+  font-size: 36px;
+}
+.modal .modalInner .leftContents .textCover .siteBtn {
+  font-family: "Noto Sans KR";
+  letter-spacing: -2%;
+  position: relative;
+  font-weight: 600;
+  font-size: 20px;
+}
+.modal .modalInner .leftContents .textCover .siteBtn::before {
+  content: "";
   position: absolute;
-  right: 10px;
+  width: 16px;
+  height: 1px;
+  background-color: #111;
+  top: 10px;
+  right: 0px;
+}
+.modal .modalInner .leftContents .siteFullCover {
+  position: relative;
+}
+.modal .modalInner .leftContents .siteFullCover i {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  animation: mousescroll 1s ease infinite;
+  font-size: 24px;
+}
+.modal .modalInner .leftContents .siteFullCover .siteFull {
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 320px;
+  overflow: hidden;
+  overflow: scroll;
+}
+.modal .modalInner .leftContents .siteFullCover .siteFull::-webkit-scrollbar {
+  display: none;
+}
+.modal .modalInner .leftContents .siteFullCover .siteFull img {
+  width: 100%;
+  outline: none;
+  display: block;
+}
+@keyframes mousescroll {
+  0% {
+    bottom: 20px;
+  }
+  100% {
+    bottom: 10px;
+  }
+}
+.modal .modalInner .rightContents {
+  width: 45%;
+}
+.modal .modalInner .rightContents div {
+  margin-bottom: 16px;
+}
+.modal .modalInner .rightContents span {
+  font-family: "Noto Sans KR";
+  letter-spacing: -2%;
+  font-weight: bold;
+  font-size: 24px;
+}
+.modal .modalInner .rightContents p {
+  margin-top: 7px;
+  font-family: "Inter";
+  letter-spacing: -2%;
+  font-weight: normal;
+  font-size: 16px;
+}
+.modal .modalInner .rightContents .icon {
+  display: flex;
+  gap: 8px;
+}
+.modal .modalInner .rightContents .icon img {
+  width: 36px;
+  height: 36px;
 }
 
-.sort1,
-.sort2 {
-  color: #fff;
-  color: #000;
-  font-weight: 300;
-  margin-top: 8px;
-}
-
+/* 모달창 배경*/
+/*자세히보기 설명항목*/
+/*xbtn*/
 main section#skills {
   width: 100%;
+}
+main section#skills .pagename {
+  text-align: center;
+  margin-top: 60px;
+}
+main section#skills .pagename span {
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  color: #111;
+  font-family: "KIMM_Bold";
+  position: relative;
+}
+main section#skills .pagename span:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #F39C12;
+  top: 0px;
+  right: -20px;
 }
 main section#skills .skillsInner {
   width: 1280px;
   height: 100%;
   position: relative;
   margin: 0px auto;
-}
-main section#skills .skillsInner .pagename {
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  color: #111;
-  margin-top: 60px;
 }
 main section#skills .skillsInner .skills {
   width: 100%;
@@ -482,59 +485,133 @@ main section#skills .skillsInner .skills .card .back {
   align-items: center;
   justify-content: center;
   position: relative;
-  background-color: #EDEDED;
+  background-color: #fff;
   /* 추가 */
 }
 main section#skills .skillsInner .skills .card .back .backInner {
   width: 90%;
   height: 90%;
-}
-main section#skills .skillsInner .skills .card .back .backInner p {
-  color: #F39C12;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-}
-main section#skills .skillsInner .skills .card .back .backInner ul li {
+  text-align: justify;
   font-size: 16px;
   font-weight: 500;
   text-align: left;
   color: #111;
 }
-main section#skills .skillsInner .skills .card .back .backInner ul li span {
+main section#skills .skillsInner .skills .card .back .backInner p {
+  color: #000;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Noto Sans KR";
+  letter-spacing: -2%;
+  font-weight: bold;
+  font-size: 24px;
+  font-size: 36px;
+}
+main section#skills .skillsInner .skills .card .back .backInner span {
   color: #111;
+  font-family: "Inter";
+  letter-spacing: -2%;
+  font-weight: normal;
+  font-size: 16px;
+  font-size: 16px;
 }
 
 main section#me {
   width: 100%;
   height: 1080px;
 }
+main section#me .pagename {
+  text-align: center;
+  margin-top: 60px;
+}
+main section#me .pagename span {
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  color: #111;
+  font-family: "KIMM_Bold";
+  position: relative;
+}
+main section#me .pagename span:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #F39C12;
+  top: 0px;
+  right: -20px;
+}
 main section#me .meInner {
   width: 1280px;
   height: 100%;
   position: relative;
   margin: 0px auto;
-}
-main section#me .meInner .pagename {
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  color: #111;
-  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 main section#me .meInner .meIntro {
-  position: absolute;
   display: flex;
+  height: 100%;
+  width: 45%;
+  align-items: center;
   justify-content: space-between;
 }
 main section#me .meInner .meIntro .meImage img {
-  max-width: 50%;
-  border-radius: 50px;
+  max-width: 100%;
+}
+main section#me .meInner ul.meDetails {
+  width: 45%;
+}
+main section#me .meInner ul.meDetails ul {
+  margin-bottom: 40px;
+}
+main section#me .meInner ul.meDetails ul p {
+  font-family: "Noto Sans KR";
+  letter-spacing: -2%;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+main section#me .meInner ul.meDetails ul li {
+  font-family: "Inter";
+  letter-spacing: -2%;
+  font-weight: normal;
+  font-size: 16px;
+  margin-top: 4px;
+}
+main section#me .meInner ul.meDetails ul li i {
+  font-weight: 600;
+}
+main section#me .meInner ul.meDetails ul li span {
+  display: block;
+  margin-bottom: 6px;
 }
 
 main section#Contact {
   width: 100%;
   height: 1080px;
+}
+main section#Contact .pagename {
+  text-align: center;
+  margin-top: 60px;
+}
+main section#Contact .pagename span {
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  color: #111;
+  font-family: "KIMM_Bold";
+  position: relative;
+}
+main section#Contact .pagename span:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #F39C12;
+  top: 0px;
+  right: -20px;
 }
 main section#Contact .contactInner {
   width: 1280px;
@@ -545,13 +622,6 @@ main section#Contact .contactInner {
   flex-direction: column;
   justify-content: space-between;
 }
-main section#Contact .contactInner .pagename {
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  color: #111;
-  margin-top: 60px;
-}
 main section#Contact .contactInner .contactMe {
   display: flex;
   justify-content: space-between;
@@ -561,6 +631,29 @@ main section#Contact .contactInner .contactMe p {
   width: 45%;
   font-size: 40px;
   text-align: center;
+  font-family: "Noto Sans Kr";
+  font-family: "KIMM_Light";
+}
+main section#Contact .contactInner .contactMe p .lightpenOn {
+  position: relative;
+}
+main section#Contact .contactInner .contactMe p .lightpenOn::before {
+  content: "";
+  position: absolute;
+  background-color: #F39C12;
+  width: 1%;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  animation: light 2s ease forwards;
+}
+@keyframes light {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 main section#Contact .contactInner .contactMe form {
   width: 45%;
@@ -581,10 +674,9 @@ main section#Contact .contactInner .contactMe form .form div {
   gap: 10px;
 }
 main section#Contact .contactInner .contactMe form .form div label {
-  font-family: "KIMM_Bold";
-  font-size: 1rem;
+  font-family: "Noto Sans Kr";
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.0625em;
   margin-right: 10px;
 }
 main section#Contact .contactInner .contactMe form .form div input {
@@ -595,14 +687,13 @@ main section#Contact .contactInner .contactMe form .form div input {
   width: 100%;
   height: 50px;
   background-color: #fff;
-  border: 2px solid black;
-  font-family: "KIMM_Bold";
-  letter-spacing: -0.0625em;
-  font-size: 1rem;
-  font-weight: 500;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
   padding-left: 10px;
   margin-bottom: 20px;
-  transition: 0.5s;
 }
 main section#Contact .contactInner .contactMe form .form div:nth-child(4) {
   height: 50%;
@@ -616,14 +707,13 @@ main section#Contact .contactInner .contactMe form .form div:nth-child(4) textar
   height: 200px;
   padding-top: 10px;
   background-color: #fff;
-  border: 2px solid black;
-  font-family: "KIMM_Bold";
-  letter-spacing: -0.0625em;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  font-family: "Noto Sans Kr";
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
   padding-left: 10px;
   margin-bottom: 20px;
-  transition: 0.5s;
 }
 main section#Contact .contactInner .contactMe form .form .button {
   cursor: none;
@@ -635,70 +725,28 @@ main section#Contact .contactInner .contactMe form .form .button {
   color: #000;
   border: none;
   border-radius: 5px;
-  font-family: "KIMM_Bold";
+  font-family: "Noto Sans Kr";
   letter-spacing: -0.0625em;
   font-size: 1.5rem;
   font-weight: 600;
-  border: 2px solid #000;
-}
-
-.meActive {
-  font-size: 3rem;
-  font-weight: 600;
-  text-align: center;
-  color: #fff;
-  color: yellow;
-  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
-  animation: color 2s linear infinite;
-  transition: 0.5s;
-}
-@keyframes color {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
+  border: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .buttonon {
-  opacity: 1;
-  position: relative;
+  cursor: none;
   width: 180px;
   height: 50px;
+  background-color: #000;
   transition: 0.5s;
   outline: none;
+  color: #fff;
   border: none;
   border-radius: 5px;
-  font-family: "KIMM_Bold";
+  font-family: "Noto Sans Kr";
   letter-spacing: -0.0625em;
   font-size: 1.5rem;
   font-weight: 600;
-  background-color: #F39C12;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  overflow: hidden;
-  --a: initial;
+  border: 1px solid #000;
+  box-sizing: border-box;
 }
-.buttonon::after {
-  content: "";
-  position: absolute;
-  top: var(--top);
-  left: var(--left);
-  width: var(--diameter);
-  height: var(--diameter);
-  transform: scale(0);
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: var(--a);
-}
-@keyframes ripple-effect {
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}/*# sourceMappingURL=style.css.map */
