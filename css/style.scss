@@ -49,14 +49,13 @@ body {
     // transition: background-color 0.5s;
     display: none;
 
-    
+
 
 
     i {
         font-size: 20px;
         font-weight: bold;
         color: #111;
-        animation: mousescroll 1s ease infinite;
 
     }
 
@@ -64,7 +63,43 @@ body {
 }
 
 .cursorShake {
-    animation: shake 2s ease infinite;
+    animation: shake 0.7s ease infinite;
+    background-color: #3498DB;
+
+}
+
+.cursorClick {
+    position: relative;
+    &::before{
+        content: "Click";
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-family: "Inter";
+        font-weight: 400;
+        animation: opacity 1s ease infinite;
+    }
+}
+
+@keyframes opacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0% {
+      
+        transform: translateY(-15%);
+    }
+
+    100% {
+        
+        transform: translateY(15%);
+    }
 }
 
 .trail-item {
@@ -177,7 +212,7 @@ section#project {
 
     .pagename {
         @include pagename();
-       
+
 
     }
 
@@ -475,7 +510,7 @@ section#project {
 // skills
 main section#skills {
     width: 100%;
-
+    height: 1800px;
     .pagename {
         @include pagename();
     }
@@ -736,31 +771,31 @@ main section#Contact {
 
                 .lightpenOn {
 
-                   position: relative;
-                   
-                   &::before{
-                    content: "";
-                    position: absolute;
-                    background-color: $main;
-                    
-                    width: 1%;
-                    bottom: 0;
-                    top: 0;
-                    z-index: -1;
-                    animation: light 2s ease forwards;
-                   }
-                    
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background-color: $main;
+
+                        width: 1%;
+                        bottom: 0;
+                        top: 0;
+                        z-index: -1;
+                        animation: light 2s ease forwards;
+                    }
+
 
                 }
 
                 @keyframes light {
                     0% {
-                        
+
                         width: 0%;
                     }
 
                     100% {
-                        
+
                         width: 100%;
                     }
                 }

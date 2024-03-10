@@ -1,52 +1,48 @@
-document.addEventListener("mousemove", function(e) {
+document.addEventListener("mousemove", function (e) {
     // 마우스 위치 가져오기
-    
+
     let mouseX = e.clientX;
     let mouseY = e.clientY;
-  
+
     // 커스텀 커서 요소 선택
     let cursor = document.querySelector(".custom-cursor");
 
-  
+
     // 커서 위치 설정
     cursor.style.display = "block";
     cursor.style.left = mouseX + "px";
     cursor.style.top = mouseY + "px";
-  });
+});
 
-  
+
 
 
 $(document).ready(function () {
-    $("body a").on("mouseover", function(){
-        $(".custom-cursor").css('background-color','#F39C12');
+
+
+    $("html").on("mouseout", function () {
+        $(".custom-cursor").css('opacity', '0')
     });
-    $("body a").on("mouseout", function(){
-        $(".custom-cursor").css('background-color','');
+    $("html").on("mouseover", function () {
+        $(".custom-cursor").css('opacity', '')
     });
-    $("html").on("mouseout", function(){
-        $(".custom-cursor").css('opacity','0')
-    });
-    $("html").on("mouseover", function(){
-        $(".custom-cursor").css('opacity','')
-    });
-    $("div.scroll").on("mouseover",function(){
-        $(".custom-cursor").html(`<i class="fa-solid fa-computer-mouse-scrollwheel"></i>`);
-        $(".custom-cursor").css('background-color','transparent');
-    });
-    $("div.scroll").on("mouseleave",function(){
-        $(".custom-cursor").empty();
-        $(".custom-cursor").css('background-color','');
-    });
+    // $("div.scroll").on("mouseover",function(){
+    //     $(".custom-cursor").html(`<i class="fa-solid fa-computer-mouse-scrollwheel"></i>`);
+    //     $(".custom-cursor").css('background-color','transparent');
+    // });
+    // $("div.scroll").on("mouseleave",function(){
+    //     $(".custom-cursor").empty();
+    //     $(".custom-cursor").css('background-color','');
+    // });
 
     $('input:not(".pn"),textarea').focus(function () {
         // 포커스가 들어온 입력 필드 스타일 변경
         // $(this).css('background-color', '#D9D9D9');
-        $(this).css('background-color', '#F39C12');
-        
+        $(this).css('border', '2px solid #000');
+
     }).blur(function () {
         // 포커스가 빠져나간 입력 필드 스타일 원래대로 변경
-        $(this).css('background-color', '');
+        $(this).css('border', '');
     });
 
     // 햄버거버튼 클릭시 아이콘 전환 및 메뉴호출
@@ -67,7 +63,7 @@ $(document).ready(function () {
 
     });
 
-    $(".submenu li").on("click",function(){
+    $(".submenu li").on("click", function () {
         $('.hbm>img').attr("src", "./images/hbmrev.gif")
         $('header').css('right', '');
     });
@@ -91,7 +87,7 @@ $(document).ready(function () {
             $("#btn").removeClass("buttonon");
         }
     });
- 
+
     // 모달창 열릴때 화면 y축 좌표고정
     $(".details").on("click", function () {
         // 스크롤 고정
@@ -99,6 +95,10 @@ $(document).ready(function () {
             scrollTop: 0
         }, 400)
     });
+    // $(".siteFull").on("scroll", function() {
+    //     $(".siteFull").scrollTop(400);
+
+    // });
 
 
 
@@ -124,22 +124,25 @@ $(document).ready(function () {
 
     });
 
-  
 
-    $(".details").on("click", function () {
+
+    $(".worksBox").on("click", function () {
+
+
         // 스크롤 고정
         $("body").css("overflow", "hidden");
+
         // 모달창오픈
         $(".modalPort").css("display", "block");
         $(".modal").css("display", "block");
 
         // 햄버거메뉴 숨기기
-        $(".hbm").css("display", "none")
+        $(".hbm").css("display", "none");
     });
 
     // esc 창닫기
-    $(document).keydown(function(event) {
-        if ( event.keyCode == 27 || event.which == 27 ) {
+    $(document).keydown(function (event) {
+        if (event.keyCode == 27 || event.which == 27) {
             $(".modal").css("display", "");
             $("body").css("overflow", "")
             $(".modalbg").css("display", "");
@@ -151,24 +154,30 @@ $(document).ready(function () {
     // 모달창 텍스트내용 제어
     let modalElements = {
         modalName: document.getElementById("modalName"),
+        modalImg: document.getElementById("modalImage"),
+        modalSkills: document.getElementById("modalSkills"),
         modalURL: document.getElementById("URL"),
-        modalZip: document.getElementById("zip"),
-        modalSort1: document.getElementById("sort1"),
-        modalSort2: document.getElementById("sort2"),
-        modalPrdes: document.getElementById("prdes"),
-        modalContactd: document.getElementById("contactD")
-       
+        modalGitURL: document.getElementById("GitURL"),
+        modalOverview: document.getElementById("overView"),
+        mouseicon: document.querySelector(".mouseicon"),
+        modalGit: document.getElementById("GithubURL"),
+
     };
+
 
     // 모달 내용 변경 함수
     function changeModalContent(data) {
         // 데이터 객체의 키들을 반복하여 모달 요소의 텍스트 내용 변경
         Object.keys(data).forEach(key => {
             modalElements[key].textContent = data[key];
-            $(".modalImg").attr("src", data.imgSrc);
-            $(".link").attr("href", data.linkHref);
-            $(".detailsImg").attr("src", data.imgSrc2);
-        });
+            $("#modalImage").attr("src", data.imgSrc);
+            $("#URL").attr("href", data.linkHref);
+            $(".GithubURLHREF").attr("href", data.gitlinkHref);
+            $(".mouseicon").css("display", data.display);
+            $(".siteFull img").css("height", data.height);
+            $(".siteFull").scrollTop(data.scrollTop);
+
+        })
         // 모달 이미지와 링크 속성 변경
         // let img = document.getElementById("modalImg");
 
@@ -177,155 +186,206 @@ $(document).ready(function () {
 
     // 클릭 이벤트 리스너 추가 함수
     function addClickListener(selector, data) {
+        $(".icon").empty();
         // 주어진 셀렉터에 대해 클릭 이벤트 리스너 설정
         $(selector).on("click", function () {
             changeModalContent(data); // 클릭 시 모달 내용 변경
-
         });
+        
+
+      
+
     }
 
 
+    $(".detailsPort").on("click", function () {
+       
+        openPopup(4, 'modal');
+    });
+    $(".detailsGucci").on("click", function () {
+        openPopup(1, 'modal');
+    });
+
+
+    function openPopup(iconCount, ) {
+       
+        // Clear previous content
+
+        // 아이콘의 URL 예시 (원하는 URL로 변경하세요)
+        let iconURLs = [
+            "./images/figma.svg",
+            "./images/vs.svg",
+            "./images/photoshop.svg",
+            "./images/ani.svg"
+        ]
+        
+        // 팝업에 아이콘 추가
+        for (let i = 0; i < iconCount; i++) {
+            let icon = document.createElement("img");
+            icon.src = iconURLs[i % iconURLs.length];
+            $(".icon").append(icon);
+        }
+
+        // popup.style.display = "flex";
+    }
+
     addClickListener(".detailsPort", {
         modalName: "Portfolio",
-        modalURL: "https://sunghoon1209.github.io/portfolio/landingpage",
-        modalZip: "Portfolio.zip",
-        modalSort1: "HTML5  SCSS  JQUERY  JAVASCRIPT",
-        modalSort2: "Visual Studio Code Figma Animate Photoshop",
-        modalPrdes: "포트폴리오를 웹페이지형식으로 기획, 디자인, 코딩까지 전부 웹접근성과 사용자 경험,편의성에 맞춰서 제작하였습니다.",
-        modalContactd: " contactMe 영역에서 Html에 Form 요소를 만들어서 이용자의 정보를 입력하고 전송하여 그대로 제 e-mail과 구글 스프레드시트에 저장되게 만들었습니다. 또한 사용자 경험을 늘리고자 현재 Focus된 Input에 배경색을 주었고 모든 Input이 작성되었을때 Send 버튼의 색을 변경되게 했습니다. 작성이 되지 않을 Input이 존재할 경우 alert창을 띄우며 해당 영역에 Focus를 주었습니다.",
-        imgSrc2 : "./images/contactdetails.gif" ,
-        imgSrc: "./images/portFolio.png",
-        linkHref: "https://sunghoon1209.github.io/portfolio/landingpage"
-    });
+        modalGit: "https://github.com/sunghoon1209/portfolio",
+        modalSkills: "HTML5  SCSS  JQUERY  JAVASCRIPT",
+        modalOverview: "포트폴리오를 웹페이지형식으로 기획, 디자인, 코딩까지 전부 웹접근성과 사용자 경험,편의성에 맞춰서 제작",
+        imgSrc: "./images/portfull.png",
+        linkHref: "https://sunghoon1209.github.io/portfolio/landingpage",
+        gitlinkHref: "https://github.com/sunghoon1209/portfolio",
+        display: "block",
+        height: "",
+        scrollTop: 0,
 
+    });
     addClickListener(".detailsGucci", {
-        modalName: "Gucci 클론 코딩",
-        modalURL: "https://sunghoon1209.github.io/Gucci/",
-        modalZip: "Gucci.zip",
-        modalSort1: "HTML5 SCSS JQUERY",
-        modalSort2: "Visual Studio Code figma",
-        modalPrdes: "구찌 홈페이지를 반응형을 제작하였습니다.",
-        modalContactd: "비디오내용을 토글버튼 형식으로 제어하는 기능을 넣었습니다. ",
-        imgSrc: "./images/gucci.png",
-        imgSrc2: "./images/guccidetails.gif",
-        linkHref: "https://sunghoon1209.github.io/Gucci/"
-    });
+        modalName: "Gucci",
+        modalGit: "https://github.com/sunghoon1209/Gucci",
+        modalSkills: "HTML5  SCSS  JQUERY ",
+        modalOverview: "구찌 홈페이지를 반응형을 제작",
+        imgSrc: "./images/gucciFull.png",
+        linkHref: "https://sunghoon1209.github.io/Gucci",
+        gitlinkHref: "https://github.com/sunghoon1209/Gucci",
+        display: "block",
+        height: "",
+        scrollTop: 0
 
-    addClickListener(".detailsGroundX", {
-        modalName: "Ground X 클론 코딩",
-        modalURL: "https://sunghoon1209.github.io/GroundX",
-        modalZip: "GroundX.zip",
-        modalSort1: "HTML5 SCSS JQUERY JAVASCRIPT",
-        modalSort2: "Visual Studio Code figma",
-        modalPrdes: "기존에 존재하는 Ground X 홈페이지를 반응형으로 제작하였습니다.",
-        modalContactd: "스크롤 이벤트로 nav메뉴 클릭시 해당 내용이 있는 곳으로 이동하고 메뉴의 색이 변하게 만들었습니다.",
-        imgSrc: "./images/groundXfull.png",
-        imgSrc2: "./images/groundXdetails.gif",
-        linkHref: "https://sunghoon1209.github.io/GroundX"
-    });
 
+    });
     addClickListener(".detailsDev", {
         modalName: "Devsisters",
-        modalURL: "https://sunghoon1209.github.io/Devsisters/",
-        modalZip: "Devsisters.zip",
-        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
-        modalSort2: "Visual Studio Code figma",
-        modalPrdes: "Devsisters의 홈페이지를 참고하여 유사성을 살려서 새롭게 코딩하였습니다.",
-        modalContactd: "마우스커서의 좌표값을 가져와서 버튼위에 올렸을때를 기준으로 리플효과를 넣었습니다. ",
-        imgSrc: "./images/dev.png",
-        imgSrc2: "./images/devdetails.gif",
-        linkHref: "https://sunghoon1209.github.io/Devsisters"
+        modalGit: "https://github.com/sunghoon1209/Devsisters",
+        modalSkills: "HTML5  CSS3  JQUERY JAVASCRIPT ",
+        modalOverview: "Devsisters의 홈페이지를 참고하여 유사성을 살려서 새롭게 웹페이지 제작",
+        imgSrc: "./images/devFull.png",
+        linkHref: "https://sunghoon1209.github.io/Devsisters",
+        gitlinkHref: "https://github.com/sunghoon1209/Devsisters",
+        display: "block",
+        height: "",
+        scrollTop: 0
+
     });
-    addClickListener(".detailsSamsung", {
-        modalName: "Samsung",
-        modalURL: "https://sunghoon1209.github.io/samsung/",
-        modalZip: "Devsisters.zip",
-        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
-        modalSort2: "Visual Studio Code",
-        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
-        modalContactd: " JQUERY 라이브러리를 사용하여 이미지 슬라이드를 쉽고 빠르게 적용하였습니다.",
-        imgSrc: "./images/samsung.png",
-        imgSrc2: "./images/samsungDetails.gif",
-        linkHref: "https://sunghoon1209.github.io/samsung/"
-    });
-    addClickListener(".detailsHanhwa", {
-        modalName: "Hanhwa",
-        modalURL: "https://sunghoon1209.github.io/hanhwa/",
-        modalZip: "Devsisters.zip",
-        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
-        modalSort2: "Visual Studio Code",
-        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
-        modalContactd: "WOW.js를 이용하여 스크롤시 Fade IN 기능을 쉽고 빠르게 적용하였습니다.",
-        imgSrc: "./images/hanhwa.png",
-        imgSrc2: "./images/hanhwaDetails.gif",
-        linkHref: "https://sunghoon1209.github.io/hanhwa/"
+    addClickListener(".detailsSamyang", {
+        modalName: "Samyang",
+        modalGit: "https://github.com/sunghoon1209/samyang",
+        modalSkills: "HTML5  CSS3  JAVASCRIPT ",
+        modalOverview: "삼양식품 홈페이지를 그대로 제작",
+        imgSrc: "./images/samyangfull.png",
+        gitlinkHref: "https://github.com/sunghoon1209/samyang",
+        linkHref: "https://sunghoon1209.github.io/samyang",
+        display: "block",
+        height: "",
+        scrollTop: 0
+
     });
     addClickListener(".detailsItsix", {
         modalName: "ITSIX",
-        modalURL: "https://sunghoon1209.github.io/itsix/",
-        modalZip: "Devsisters.zip",
-        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
-        modalSort2: "Visual Studio Code",
-        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
-        modalContactd: "WOW.js를 이용하여 스크롤시 Fade IN 기능을 쉽고 빠르게 적용하였습니다.",
-        imgSrc: "./images/itsix.gif",
-        imgSrc2: "./images/hanhwaDetails.gif",
-        linkHref: "https://sunghoon1209.github.io/itsix/"
+        modalGit: "https://github.com/sunghoon1209/itsix",
+        modalSkills: "HTML5  CSS3  JAVASCRIPT JQUERY ",
+        modalOverview: "ITSIX홈페이지를 오류를 수정하여 제작",
+        imgSrc: "./images/samyangfull.png",
+        gitlinkHref: "https://github.com/sunghoon1209/itsix",
+        linkHref: "https://sunghoon1209.github.io/itsix/",
+        display: "block",
+        height: "",
+        scrollTop: 0
+
+    });
+    addClickListener(".deatilsPetfriends", {
+        modalName: "ITSIX",
+        modalGit: "https://github.com/sunghoon1209/petfriends",
+        modalSkills: "HTML5  CSS3  JAVASCRIPT ",
+        modalOverview: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 반응형으로 디자인하여 제작",
+        imgSrc: "./images/petfriendsFull.png",
+        gitlinkHref: "https://github.com/sunghoon1209/petfriends",
+        linkHref: "https://sunghoon1209.github.io/petfriends/",
+        display: "block",
+        height: "",
+        scrollTop: 0
+
     });
     addClickListener(".detailsHpoint", {
         modalName: "H.point",
-        modalURL: "https://sunghoon1209.github.io/hpoint/",
-        modalZip: "Devsisters.zip",
-        modalSort1: "HTML5 CSS3 JQUERY JAVASCRIPT",
-        modalSort2: "Visual Studio Code",
-        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
-        modalContactd: "스와이퍼 플러그인과 슬릭 플러그인을 활용해 ",
-        imgSrc: "./images/hpoint.png",
-        imgSrc2: "./images/hpointDetails.gif",
-        linkHref: "https://sunghoon1209.github.io/hpoint/"
+        modalGit: "https://github.com/sunghoon1209/hpoint",
+        modalSkills: "HTML5  CSS3 JQUERY JAVASCRIPT ",
+        modalOverview: "현대백화점그룹 통합멤버십 웹페이지를 그대로 제작    ",
+        imgSrc: "./images/hpointFull.png",
+        gitlinkHref: "https://github.com/sunghoon1209/hpoint",
+        linkHref: "https://sunghoon1209.github.io/hpoint/",
+        display: "block",
+        height: "",
+        scrollTop: 0
+
     });
+
+    addClickListener(".detailsHanhwa", {
+        modalName: "Hanhwa",
+        modalGit: "https://github.com/sunghoon1209/hanhwa",
+        modalSkills: "HTML5  CSS3 JQUERY JAVASCRIPT ",
+        modalOverview: "한화케미칼 웹페이지를 그대로 제작",
+        imgSrc: "./images/hanhwaFull.png",
+        gitlinkHref: "https://github.com/sunghoon1209/hanhwa",
+        linkHref: "https://sunghoon1209.github.io/hanhwa/",
+        display: "block",
+        height: "",
+        scrollTop: 0
+
+    });
+    addClickListener(".detailsGroundX", {
+        modalName: "Ground X",
+        modalGit: "https://github.com/sunghoon1209/GroundX",
+        modalSkills: "HTML5  CSS3 JQUERY JAVASCRIPT ",
+        modalOverview: "Ground X 홈페이지를 반응형으로 그대로 제작",
+        imgSrc: "./images/groundXfull.png",
+        gitlinkHref: "https://github.com/sunghoon1209/GroundX",
+        linkHref: "https://sunghoon1209.github.io/GroundX/",
+        display: "block",
+        height: "",
+        scrollTop: 0
+
+    });
+
     addClickListener(".details3d", {
         modalName: "3D Site",
-        modalURL: " https://sunghoon1209.github.io/3D/",
-        modalZip: "Devsisters.zip",
-        modalSort1: "HTML5 CSS3 JAVASCRIPT",
-        modalSort2: "Visual Studio Code",
-        modalPrdes: "디자인 된 홈페이지를 코딩하여 제작하였습니다.",
-        modalContactd: "스와이퍼 플러그인과 슬릭 플러그인을 활용해 ",
+        modalGit: "https://github.com/sunghoon1209/3D",
+        modalSkills: "HTML5  CSS3 JAVASCRIPT ",
+        modalOverview: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 반응형으로 디자인하여 제작",
         imgSrc: "./images/3d.gif",
-        imgSrc2: "./images/hpointDetails.gif",
-        linkHref: " https://sunghoon1209.github.io/3D/"
-    });
-    addClickListener(".detailsWeather", {
-        modalName: "날씨검색싸이트",
-        modalURL: "http://so1091.dothome.co.kr/weather/",
-        modalZip: "weather.zip",
-        modalSort1: "HTML5 CSS3 JAVASCRIPT",
-        modalSort2: "Visual Studio Code ",
-        modalPrdes: "자바스크립트의 fetch 함수를 이용하여 검색창에 지역을 검색하면 해당 지역의 실시간 날씨 정보 api를 호출하여 기온,풍속,날씨를 알려주는 간단한 날씨검색사이트를 제작하였습니다. ",
-        modalContactd: " 호출한 데이터의 날씨에 따라 배경 테마 색을 약간 변경되게 만들었습니다. 예를 들어 받아온 데이터 중 날씨가 sunny인 경우 테마에 맞게 갱신되도록 제작하였습니다.  ",        
-        imgSrc: "./images/weather.png",
-        imgSrc2 : "./images/weatherdeatials.gif" ,
-        linkHref: "http://so1091.dothome.co.kr/weather/"
-        
-    });
-  
-    addClickListener(".deatilsPetfriends", {
-        modalName: "펫프렌즈",
-        modalURL: "https://sunghoon1209.github.io/petfriends/",
-        modalZip: "weather.zip",
-        modalSort1: "HTML5 SCSS JAVASCRIPT",
-        modalSort2: "Visual Studio Code ",
-        modalPrdes: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 디자인하여 코딩하였습니다.",
-        modalContactd: "장바구니에 추가 버튼을 활용하면 장바구니에 추가되며 추가된 물품의 합계 금액이 계산되어 하단에 보이게 제작하였습니다. ",        
-        imgSrc: "./images/petfriend.png",
-        imgSrc2 : "./images/petfriendsDetails.gif" ,
-        linkHref: "https://sunghoon1209.github.io/petfriends"
-        
+        gitlinkHref: "https://github.com/sunghoon1209/3D",
+        linkHref: "https://sunghoon1209.github.io/3D/",
+        display: "none",
+        height: "100%",
+        scrollTop: 0
     });
 
-
-
+    addClickListener(".detailsSkpic", {
+        modalName: "Sk Picglobal",
+        modalGit: "https://github.com/sunghoon1209/skPicglobal",
+        modalSkills: "HTML5  CSS3 JAVASCRIPT ",
+        modalOverview: "SK Picglobal 홈페이지를 그대로 제작",
+        imgSrc: "./images/skPicFull.png",
+        gitlinkHref: "https://github.com/sunghoon1209/skPicglobal",
+        linkHref: "https://sunghoon1209.github.io/skPicglobal/",
+        display: "block",
+        height: "",
+        scrollTop: 0
+    });
+    addClickListener(".detailsVedio", {
+        modalName: "Introduce To Video ",
+        modalGit: "https://github.com/sunghoon1209/introducetovideo",
+        modalSkills: "HTML5  CSS3 JAVASCRIPT ",
+        modalOverview: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 반응형으로 디자인하여 제작",
+        imgSrc: "./images/Video.png",
+        gitlinkHref: "https://github.com/sunghoon1209/introducetovideo",
+        linkHref: "https://sunghoon1209.github.io/introducetovideo/",
+        display: "none",
+        height: "100%",
+        scrollTop: 0
+    });
 
 
 
@@ -380,6 +440,7 @@ function doAction() {
 }
 
 
+console.log(document.scroll);
 
 
 
@@ -388,40 +449,13 @@ function doAction() {
 
 
 
-// 현재스크롤위치확인
 window.addEventListener("scroll", (event) => {
     let scrollY = this.scrollY;
     console.log(scrollY);
-    let currentPosition = window.scrollY + window.innerHeight;
-    const interval = 50;
-    index = [1,2,3]
-    if (currentPosition >= 5000) {
-        // 원하는 이벤트 실행
-        setTimeout(function () {
-            document.querySelector(".strong").style.color = "#F39C12";
-        
-        }, 500);
-            
-        
-        setTimeout(function () {
-        
-            document.querySelector(".strong2").style.color = "#F39C12";
-            
-        }, 1500);
-            
-        
-        setTimeout(function () {
-           
-            document.querySelector(".strong3").style.color = "#F39C12";
-        }, 2500);
-        return;      
-        
+    if (scrollY >= 4000) {
+        let textbgr = document.querySelector(".lightpen")
+        textbgr.classList.add("lightpenOn");
+
     }
 
-     
-   
-
-   
-
 });
-

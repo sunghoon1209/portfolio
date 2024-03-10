@@ -54,6 +54,11 @@ body {
   overflow: hidden;
 }
 
+body {
+  font-family: "KIMM_Bold";
+  font-weight: 800;
+}
+
 #left {
   width: 0%;
   height: 100vh;
@@ -161,4 +166,4 @@ ul.text input[type=checkbox]:checked ~ div {
   100% {
     filter: hue-rotate(360deg);
   }
-}
+}/*# sourceMappingURL=landing.css.map */
