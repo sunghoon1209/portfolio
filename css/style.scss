@@ -151,7 +151,7 @@ header {
         //         font-size: 2rem;
         //         font-weight: 700;
         //         font-family: 'KIMM_Bold';
-        //         letter-spacing: -1px;
+        //         letter-spacing: 1pxpx;
         //         color: $sub;
         //         &:hover {
         //             color: $main;
@@ -382,7 +382,7 @@ section#project {
         align-items: center;
 
 
-        .leftContents {
+        a.leftContents {
             width: 45%;
 
             .textCover {
@@ -394,14 +394,14 @@ section#project {
 
                 h2 {
                     font-family: "Noto Sans KR";
-                    letter-spacing: -2%;
+                    letter-spacing: 1px;
                     font-weight: bold;
                     font-size: 36px;
                 }
 
                 .siteBtn {
                     font-family: "Noto Sans KR";
-                    letter-spacing: -2%;
+                    letter-spacing: 1px;
                     position: relative;
                     font-weight: 600;
                     font-size: 20px;
@@ -617,6 +617,9 @@ main section#skills {
                         width: 90%;
                         height: 90%;
                         text-align: justify;
+                        color: #111;
+                        @include contents();
+                        font-size: 16px;
 
                         // justify-content: space-between;
 
@@ -637,11 +640,9 @@ main section#skills {
                         color: #111;
                         // margin-top: 4px;
 
-                        span {
-                            color: #111;
-                            @include contents();
-                            font-size: 16px;
-                        }
+                      
+                           
+                       
 
                     }
 
@@ -696,7 +697,7 @@ main section#me {
 
         }
 
-        ul.meDetails {
+        .meDetails {
 
 
             width: 45%;
@@ -704,23 +705,22 @@ main section#me {
             ul {
                 margin-bottom: 40px;
 
-                p {
-                    @include title();
-                    margin-bottom: 6px;
-                }
-
+                 
                 li {
+                    &:nth-child(1){
+                        @include title();
+                        margin-bottom: 6px;
+                    }
                     @include contents();
                     margin-top: 4px;
 
                     i {
                         font-weight: 600;
-                    }
-
-                    span {
                         display: block;
                         margin-bottom: 6px;
                     }
+
+                  
                 }
             }
         }
