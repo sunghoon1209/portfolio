@@ -1,20 +1,18 @@
-// startEvent 함수를 정의합니다.
+
 function startEvent() {
-    // 이벤트를 시작하는 코드를 여기에 작성합니다.
-    // 체크박스 요소들을 가져옵니다.
+  
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     // 체크박스 선택 간격 (밀리초)
     const interval = 100;
-    // 마우스 휠 이벤트 핸들러를 추가합니다.
+    // 마우스 휠 이벤트 핸들러를 추가
     checkboxes.forEach(function (checkbox, index) {
-        // 체크박스의 현재 상태를 가져옵니다.
+        // 체크박스의 현재 상태
         const isChecked = checkbox.checked;
         // 배경변경
         document.getElementById("left").style.width = "50%";
         document.getElementById("right").style.width = "50%";
-
-        // document.getElementById("main").style.backgroundColor = "#000";
-        // 체크박스가 선택되어 있지 않으면 선택합니다.
+  
+        // 체크박스가 선택되어 있지 않으면 선택
         if (!isChecked) {
             setTimeout(function () {
                 checkbox.checked = true;
@@ -38,9 +36,8 @@ function background() {
         document.getElementById("left").style.width = "50%";
         document.getElementById("right").style.width = "50%";
 
-        // 체크박스가 선택되어 있으면 선택 해제합니다.
-        // const interval = 50;
-        if (isChecked) {
+        // 체크박스가 선택되어 있으면 선택 해제
+         if (isChecked) {
             setTimeout(function () {
                 checkbox.checked = false;
                 document.getElementById("text").style.color="#fff";
@@ -53,8 +50,6 @@ function background() {
 
 }
 
-
-// 2초 후에 startEvent 함수를 실행합니다.
 
 
 
