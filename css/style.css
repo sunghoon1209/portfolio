@@ -76,7 +76,7 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background-color: #F39C12;
+  background-color: #B3A9E4;
   pointer-events: none;
   /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
   z-index: 9999999;
@@ -141,7 +141,7 @@ header .headerInner ul.submenu a:before {
   position: absolute;
   width: 0%;
   height: 80%;
-  background-color: #F39C12;
+  background-color: #B3A9E4;
   bottom: 30px;
   z-index: -1;
 }
@@ -174,7 +174,7 @@ section#project .pagename span:before {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #F39C12;
+  background-color: #B3A9E4;
   top: 0px;
   right: -20px;
 }
@@ -408,7 +408,7 @@ main section#skills .pagename span:before {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #F39C12;
+  background-color: #B3A9E4;
   top: 0px;
   right: -20px;
 }
@@ -517,7 +517,7 @@ main section#me .pagename span:before {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #F39C12;
+  background-color: #B3A9E4;
   top: 0px;
   right: -20px;
 }
@@ -590,7 +590,7 @@ main section#Contact .pagename span:before {
   position: absolute;
   width: 10px;
   height: 10px;
-  background-color: #F39C12;
+  background-color: #B3A9E4;
   top: 0px;
   right: -20px;
 }
@@ -621,7 +621,7 @@ main section#Contact .contactInner .contactMe p .lightpenOn {
 main section#Contact .contactInner .contactMe p .lightpenOn::before {
   content: "";
   position: absolute;
-  background-color: #F39C12;
+  background-color: #B3A9E4;
   width: 1%;
   bottom: 0;
   top: 0;

@@ -301,7 +301,7 @@ $(document).ready(function () {
         modalName: "3D SITE",
         modalGit: "https://github.com/sunghoon1209/3D",
         modalSkills: "HTML5  CSS3 JAVASCRIPT ",
-        modalOverview: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 반응형으로 디자인하여 제작",
+        modalOverview: "3D로 돌아가는 웹페이지 제작",
         imgSrc: "./images/3d.gif",
         imgAlt: "3d 풀페이지",
         gitlinkHref: "https://github.com/sunghoon1209/3D",
