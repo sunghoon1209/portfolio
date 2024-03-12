@@ -101,17 +101,7 @@ $(document).ready(function () {
         }
     });
 
-    // 모달창 텍스트내용 제어
-    // let modalElements = {
-    //     modalName: document.getElementById("modalName"),
-    //     modalImg: document.getElementById("modalImage"),
-    //     modalSkills: document.getElementById("modalSkills"),
-    //     modalURL: document.getElementById("URL"),
-    //     modalGitURL: document.getElementById("GitURL"),
-    //     modalOverview: document.getElementById("overView"),
-    //     mouseicon: document.querySelector(".mouseicon"),
-    //     modalGit: document.getElementById("GithubURL"),
-    // };
+
     let modalElements = {
         modalName: $("#modalName"),
         modalImg: $("#modalImage"),
@@ -161,7 +151,7 @@ $(document).ready(function () {
     addClickListener(".detailsPort", {
         modalName: "Portfolio",
         modalGit: "https://github.com/sunghoon1209/portfolio",
-        modalSkills: "HTML5  SCSS  JQUERY  JAVASCRIPT",
+        modalSkills: "HTML5  SCSS  jQuery  Javascript",
         modalOverview: "포트폴리오를 웹페이지형식으로 기획, 디자인, 코딩까지 전부 웹접근성과 사용자 경험,편의성에 맞춰서 제작",
         imgSrc: "./images/portfull.jpg",
         imgAlt: "포트폴리오 풀페이지",
@@ -176,7 +166,7 @@ $(document).ready(function () {
     addClickListener(".detailsGucci", {
         modalName: "GUCCI",
         modalGit: "https://github.com/sunghoon1209/Gucci",
-        modalSkills: "HTML5  SCSS  JQUERY ",
+        modalSkills: "HTML5  SCSS  jQuery ",
         modalOverview: "구찌 홈페이지를 반응형을 제작",
         imgSrc: "./images/gucciFull.jpg",
         imgAlt: "구찌 풀페이지",
@@ -192,7 +182,7 @@ $(document).ready(function () {
     addClickListener(".detailsDev", {
         modalName: "Devsisters",
         modalGit: "https://github.com/sunghoon1209/Devsisters",
-        modalSkills: "HTML5  CSS3  JQUERY JAVASCRIPT ",
+        modalSkills: "HTML5  CSS3  jQuery Javascript ",
         modalOverview: "Devsisters의 홈페이지를 참고하여 유사성을 살려서 새롭게 웹페이지 제작",
         imgSrc: "./images/devFull.jpg",
         imgAlt: "데브시스터즈 풀페이지",
@@ -207,7 +197,7 @@ $(document).ready(function () {
     addClickListener(".detailsSamyang", {
         modalName: "Samyang",
         modalGit: "https://github.com/sunghoon1209/samyang",
-        modalSkills: "HTML5  CSS3  JAVASCRIPT ",
+        modalSkills: "HTML5  CSS3  Javascript ",
         modalOverview: "삼양식품 홈페이지를 그대로 제작",
         imgSrc: "./images/samyangfull.jpg",
         imgAlt: "삼양식품 풀페이지",
@@ -222,7 +212,7 @@ $(document).ready(function () {
     addClickListener(".detailsItsix", {
         modalName: "ITSIX",
         modalGit: "https://github.com/sunghoon1209/itsix",
-        modalSkills: "HTML5  CSS3  JAVASCRIPT JQUERY ",
+        modalSkills: "HTML5  CSS3  Javascript jQuery ",
         modalOverview: "ITSIX홈페이지를 보완하여 반응형으로  제작",
         imgSrc: "./images/itsixfullpage.jpeg",
         imgAlt: "itsix 풀페이지",
@@ -237,7 +227,7 @@ $(document).ready(function () {
     addClickListener(".deatilsPetfriends", {
         modalName: "Petfriends",
         modalGit: "https://github.com/sunghoon1209/petfriends",
-        modalSkills: "HTML5  SCSS  JAVASCRIPT ",
+        modalSkills: "HTML5  SCSS  Javascript ",
         modalOverview: "기존에는 어플리케이션 형식으로만 존재하던 펫프렌즈 홈페이지를 웹 형식에 맞게 반응형으로 디자인하여 제작",
         imgSrc: "./images/petfriendsFull.jpg",
         imgAlt: "펫프렌즈 풀페이지",
@@ -252,8 +242,8 @@ $(document).ready(function () {
     addClickListener(".detailsHpoint", {
         modalName: "H.Point",
         modalGit: "https://github.com/sunghoon1209/hpoint",
-        modalSkills: "HTML5  CSS3 JQUERY JAVASCRIPT ",
-        modalOverview: "현대백화점그룹 통합멤버십 웹페이지를 그대로 제작    ",
+        modalSkills: "HTML5  CSS3 jQuery Javascript ",
+        modalOverview: "현대백화점그룹 통합멤버십 웹페이지를 그대로 제작",
         imgSrc: "./images/hpointFull.jpg",
         imgAlt: "hpoint 풀페이지",
         gitlinkHref: "https://github.com/sunghoon1209/hpoint",
@@ -269,7 +259,7 @@ $(document).ready(function () {
     addClickListener(".detailsHanhwa", {
         modalName: "Hanhwa Chemical",
         modalGit: "https://github.com/sunghoon1209/hanhwa",
-        modalSkills: "HTML5  CSS3 JQUERY JAVASCRIPT ",
+        modalSkills: "HTML5  CSS3 jQuery Javascript ",
         modalOverview: "한화케미칼 웹페이지를 그대로 제작",
         imgSrc: "./images/hanhwaFull.jpg",
         imgAlt: "한화케미칼 풀페이지",
@@ -284,7 +274,7 @@ $(document).ready(function () {
     addClickListener(".detailsGroundX", {
         modalName: "Ground X",
         modalGit: "https://github.com/sunghoon1209/GroundX",
-        modalSkills: "HTML5  CSS3 JQUERY JAVASCRIPT ",
+        modalSkills: "HTML5  CSS3 jQuery Javascript ",
         modalOverview: "Ground X 홈페이지를 반응형으로 그대로 제작",
         imgSrc: "./images/groundXfull.jpg",
         imgAlt: "ground X 풀페이지",
@@ -300,7 +290,7 @@ $(document).ready(function () {
     addClickListener(".details3d", {
         modalName: "3D SITE",
         modalGit: "https://github.com/sunghoon1209/3D",
-        modalSkills: "HTML5  CSS3 JAVASCRIPT ",
+        modalSkills: "HTML5  CSS3 Javascript ",
         modalOverview: "3D로 돌아가는 웹페이지 제작",
         imgSrc: "./images/3d.gif",
         imgAlt: "3d 풀페이지",
@@ -315,7 +305,7 @@ $(document).ready(function () {
     addClickListener(".detailsSkpic", {
         modalName: "SK Picglobal",
         modalGit: "https://github.com/sunghoon1209/skPicglobal",
-        modalSkills: "HTML5  CSS3 JAVASCRIPT ",
+        modalSkills: "HTML5  CSS3 Javascript ",
         modalOverview: "SK Picglobal 홈페이지를 그대로 제작",
         imgSrc: "./images/skPicFull.jpg",
         imgAlt: "Sk picglobal 풀페이지",
@@ -329,7 +319,7 @@ $(document).ready(function () {
     addClickListener(".detailsVedio", {
         modalName: "Introduce To Video ",
         modalGit: "https://github.com/sunghoon1209/introducetovideo",
-        modalSkills: "HTML5  CSS3 JAVASCRIPT ",
+        modalSkills: "HTML5  SCSS Javascript ",
         modalOverview: "비디오를 소개하는  동직인 웹페이지를 반응형으로 제작",
         imgSrc: "./images/video.jpg",
         imgAlt: "비디오소개 풀페이지",
