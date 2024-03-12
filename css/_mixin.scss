@@ -1,7 +1,10 @@
 @charset "utf-8";
 
 
-@import "./variable";
+$grid :1280px;
+$font : #222831;
+$bgc : #fff;
+$main : #F39C12 ;
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
 
@@ -57,7 +60,7 @@ a {
 body {
     background-color: $bgc;
     // font-family: 'KIMM_Bold', sans-serif;
-    letter-spacing: -0.0625em;
+   
 }
 
 .blind {
@@ -72,57 +75,51 @@ body {
 @mixin pagename {
     text-align: center;
     margin-top: 60px;
-    span{
+
+    span {
         font-size: 60px;
         font-weight: 800;
         text-align: center;
         color: #111;
-        // font-family : "KIMM_Light";
-        font-family : "KIMM_Bold";
-        
+        font-family: "KIMM_Bold";
         // width: 50%;
         position: relative;
-    
-        
-        &:before{
+
+/* 페이지 제목 사각형*/
+        &:before {
             content: "";
             position: absolute;
-           width: 10px;
-           height: 10px;
+            width: 10px;
+            height: 10px;
             background-color: $main;
-           
             top: 0px;
             right: -20px;
-           
+
         }
     }
-   
 
-  
-  
 
- 
 }
 
-@mixin pageInner{
+@mixin pageInner {
     width: $grid;
     height: 100%;
     position: relative;
     margin: 0px auto;
 
 
-  }
+}
 
-  @mixin title{
+@mixin title {
     font-family: "Noto Sans KR";
-    letter-spacing: 1px;
     font-weight: bold;
     font-size: 24px;
-  }
+    line-height: 1.6;
+}
 
-  @mixin contents{
+@mixin contents {
     font-family: "Inter";
-    letter-spacing: 1px;
     font-weight: normal;
     font-size: 16px;
-  }
+    line-height: 1.2;
+}

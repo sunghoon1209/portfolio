@@ -44,7 +44,6 @@ a {
 
 body {
   background-color: #fff;
-  letter-spacing: -0.0625em;
 }
 
 .blind {
@@ -53,6 +52,35 @@ body {
   height: 1px;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+/* 커스텀 커서를 위한 커서 초기화 */
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html,
+body {
+  cursor: none;
+  box-sizing: border-box;
+  letter-spacing: -1px;
+}
+
+/* 커스텀 커서 */
+.custom-cursor {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #F39C12;
+  pointer-events: none;
+  /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
+  z-index: 9999999;
+  display: none;
 }
 
 /*햄버거메뉴*/
@@ -70,75 +98,6 @@ body {
   height: 40px;
 }
 
-html,
-body {
-  cursor: none;
-  box-sizing: border-box;
-}
-
-.custom-cursor {
-  position: fixed;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background-color: #F39C12;
-  pointer-events: none;
-  /* 커서가 다른 요소에 영향을 미치지 않도록 함 */
-  z-index: 9999999;
-  /* 다른 요소 위에 표시하기 위해 z-index 설정 */
-  display: none;
-}
-.custom-cursor i {
-  font-size: 20px;
-  font-weight: bold;
-  color: #111;
-}
-
-.cursorShake {
-  animation: shake 0.7s ease infinite;
-  background-color: #3498DB;
-}
-
-.cursorClick {
-  position: relative;
-}
-.cursorClick::before {
-  content: "Click";
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  font-family: "Inter";
-  font-weight: 400;
-  animation: opacity 1s ease infinite;
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes shake {
-  0% {
-    transform: translateY(-15%);
-  }
-  100% {
-    transform: translateY(15%);
-  }
-}
-.trail-item {
-  position: fixed;
-  width: 25px;
-  height: 25px;
-  background-color: #000080;
-  opacity: 0.1;
-  border-radius: 50%;
-  z-index: 9998;
-  /* 커서보다 하나 아래에 표시되도록 */
-}
-
 /*header */
 header {
   right: -4999px;
@@ -147,7 +106,6 @@ header {
   background-color: #fff;
   top: 0;
   position: fixed;
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   z-index: 99;
   display: flex;
   transition: 1.5s;
@@ -170,8 +128,10 @@ header .headerInner ul.submenu {
   justify-content: space-between;
   text-align: left;
 }
+
+/* 헤더 텍스트 */
 header .headerInner ul.submenu a {
-  font-size: 8rem;
+  font-size: 142px;
   font-weight: 800;
   position: relative;
   z-index: 2;
@@ -207,6 +167,7 @@ section#project .pagename span {
   color: #111;
   font-family: "KIMM_Bold";
   position: relative;
+  /* 페이지 제목 사각형*/
 }
 section#project .pagename span:before {
   content: "";
@@ -269,9 +230,10 @@ section#project .portInner .works .worksBox .imgInner h3 {
   color: #fff;
   text-align: center;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 30px;
   position: relative;
   font-weight: normal;
+  font-family: "Noto Sans KR";
 }
 section#project .portInner .works .worksBox .imgInner .iconBox {
   display: flex;
@@ -282,14 +244,11 @@ section#project .portInner .works .worksBox .imgInner .iconBox {
 section#project .portInner .works .worksBox .imgInner .iconBox div {
   color: #fff;
 }
-section#project .portInner .works .worksBox .imgInner .iconBox div i {
-  font-size: 1rem;
-}
 section#project .portInner .works .worksBox .imgInner .iconBox div p {
-  margin-top: 12px;
-  font-size: 1rem;
+  margin-top: 8px;
 }
 
+/* 모달창 배경 */
 .modalbg {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.8);
@@ -345,13 +304,11 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
 }
 .modal .modalInner a.leftContents .textCover h2 {
   font-family: "Noto Sans KR";
-  letter-spacing: 1px;
   font-weight: bold;
   font-size: 36px;
 }
 .modal .modalInner a.leftContents .textCover .siteBtn {
   font-family: "Noto Sans KR";
-  letter-spacing: 1px;
   position: relative;
   font-weight: 600;
   font-size: 20px;
@@ -406,16 +363,16 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
 }
 .modal .modalInner .rightContents span {
   font-family: "Noto Sans KR";
-  letter-spacing: 1px;
   font-weight: bold;
   font-size: 24px;
+  line-height: 1.6;
 }
 .modal .modalInner .rightContents p {
   margin-top: 7px;
   font-family: "Inter";
-  letter-spacing: 1px;
   font-weight: normal;
   font-size: 16px;
+  line-height: 1.2;
 }
 .modal .modalInner .rightContents .icon {
   display: flex;
@@ -428,9 +385,7 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/* 모달창 배경*/
-/*자세히보기 설명항목*/
-/*xbtn*/
+/* skills */
 main section#skills {
   width: 100%;
   height: 1800px;
@@ -446,6 +401,7 @@ main section#skills .pagename span {
   color: #111;
   font-family: "KIMM_Bold";
   position: relative;
+  /* 페이지 제목 사각형*/
 }
 main section#skills .pagename span:before {
   content: "";
@@ -475,9 +431,7 @@ main section#skills .skillsInner .skills .card {
   margin-top: 20px;
   display: inline-block;
   transition: transform 1s;
-  /* 추가 */
   transform: perspective(800px) rotateY(0deg);
-  /* 추가 */
   background-color: #fff;
   transform-style: preserve-3d;
   display: inline-grid;
@@ -488,7 +442,6 @@ main section#skills .skillsInner .skills .card {
 }
 main section#skills .skillsInner .skills .card:hover {
   transform: perspective(800px) rotateY(180deg);
-  /* 추가 */
 }
 main section#skills .skillsInner .skills .card > * {
   grid-area: 1/1/1/1;
@@ -518,34 +471,30 @@ main section#skills .skillsInner .skills .card .back {
   justify-content: center;
   position: relative;
   background-color: #fff;
-  /* 추가 */
 }
 main section#skills .skillsInner .skills .card .back .backInner {
   width: 90%;
   height: 90%;
   text-align: justify;
-  color: #111;
-  font-family: "Inter";
-  letter-spacing: 1px;
-  font-weight: normal;
-  font-size: 16px;
-  font-size: 16px;
-  font-size: 16px;
-  font-weight: 500;
-  text-align: left;
-  color: #111;
 }
 main section#skills .skillsInner .skills .card .back .backInner p {
-  color: #000;
   text-align: center;
   font-weight: 600;
   font-family: "Noto Sans KR";
-  letter-spacing: 1px;
   font-weight: bold;
   font-size: 24px;
-  font-size: 36px;
+  line-height: 1.6;
+}
+main section#skills .skillsInner .skills .card .back .backInner span {
+  font-family: "Inter";
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  font-size: 16px;
+  text-align: left;
 }
 
+/* section */
 main section#me {
   width: 100%;
   height: 1080px;
@@ -561,6 +510,7 @@ main section#me .pagename span {
   color: #111;
   font-family: "KIMM_Bold";
   position: relative;
+  /* 페이지 제목 사각형*/
 }
 main section#me .pagename span:before {
   content: "";
@@ -598,16 +548,16 @@ main section#me .meInner .meDetails ul {
 }
 main section#me .meInner .meDetails ul li {
   font-family: "Inter";
-  letter-spacing: 1px;
   font-weight: normal;
   font-size: 16px;
+  line-height: 1.2;
   margin-top: 4px;
 }
 main section#me .meInner .meDetails ul li:nth-child(1) {
   font-family: "Noto Sans KR";
-  letter-spacing: 1px;
   font-weight: bold;
   font-size: 24px;
+  line-height: 1.6;
   margin-bottom: 6px;
 }
 main section#me .meInner .meDetails ul li i {
@@ -616,6 +566,7 @@ main section#me .meInner .meDetails ul li i {
   margin-bottom: 6px;
 }
 
+/* ContactUs */
 main section#Contact {
   width: 100%;
   height: 1080px;
@@ -632,6 +583,7 @@ main section#Contact .pagename span {
   color: #111;
   font-family: "KIMM_Bold";
   position: relative;
+  /* 페이지 제목 사각형*/
 }
 main section#Contact .pagename span:before {
   content: "";
@@ -755,7 +707,6 @@ main section#Contact .contactInner .contactMe form .form .button {
   border: none;
   border-radius: 5px;
   font-family: "Noto Sans Kr";
-  letter-spacing: -0.0625em;
   font-size: 1.5rem;
   font-weight: 600;
   border: 1px solid #000;
@@ -773,7 +724,6 @@ main section#Contact .contactInner .contactMe form .form .button {
   border: none;
   border-radius: 5px;
   font-family: "Noto Sans Kr";
-  letter-spacing: -0.0625em;
   font-size: 1.5rem;
   font-weight: 600;
   border: 1px solid #000;
