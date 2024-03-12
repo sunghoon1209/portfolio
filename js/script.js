@@ -331,7 +331,7 @@ $(document).ready(function () {
         modalGit: "https://github.com/sunghoon1209/introducetovideo",
         modalSkills: "HTML5  CSS3 JAVASCRIPT ",
         modalOverview: "비디오를 소개하는  동직인 웹페이지를 반응형으로 제작",
-        imgSrc: "./images/Video.jpg",
+        imgSrc: "./images/video.jpg",
         imgAlt: "비디오소개 풀페이지",
         gitlinkHref: "https://github.com/sunghoon1209/introducetovideo",
         linkHref: "https://sunghoon1209.github.io/introducetovideo/",
