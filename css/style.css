@@ -151,10 +151,11 @@ header .headerInner ul.submenu a:hover:before {
   width: 100%;
 }
 
+/* project section */
 section#project {
   width: 100%;
   position: relative;
-  height: 1080px;
+  height: 880px;
 }
 section#project .pagename {
   text-align: center;
@@ -180,7 +181,7 @@ section#project .pagename span:before {
 }
 section#project .portInner {
   width: 1280px;
-  height: 100%;
+  height: 100vh;
   position: relative;
   margin: 0px auto;
 }
@@ -250,11 +251,13 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
 
 /* 모달창 배경 */
 .modalbg {
-  position: absolute;
+  position: fixed;
   background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
-  height: 9999px;
-  top: -100px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: none;
   z-index: 99;
 }
@@ -262,14 +265,13 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
 /*모달창*/
 .modal {
   position: fixed;
-  top: 0px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   width: 1280px;
   height: 720px;
   background-color: #fff;
   z-index: 9999;
-  position: absolute;
   box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
   display: none;
   overflow: hidden;
@@ -312,15 +314,24 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
   position: relative;
   font-weight: 600;
   font-size: 20px;
+  transition: 0.5s;
+}
+.modal .modalInner a.leftContents .textCover .siteBtn:hover {
+  color: #8A2BE2;
+}
+.modal .modalInner a.leftContents .textCover .siteBtn:hover:before {
+  right: 78%;
+  background-color: #8A2BE2;
 }
 .modal .modalInner a.leftContents .textCover .siteBtn::before {
   content: "";
   position: absolute;
   width: 16px;
-  height: 1px;
+  height: 2px;
   background-color: #111;
   top: 10px;
   right: 0px;
+  transition: 0.5s;
 }
 .modal .modalInner a.leftContents .siteFullCover {
   position: relative;
@@ -379,10 +390,10 @@ section#project .portInner .works .worksBox .imgInner .iconBox div p {
   gap: 16px;
 }
 .modal .modalInner .rightContents .icon img {
+  margin-top: 40px;
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 /* skills */
@@ -414,7 +425,7 @@ main section#skills .pagename span:before {
 }
 main section#skills .skillsInner {
   width: 1280px;
-  height: 100%;
+  height: 100vh;
   position: relative;
   margin: 0px auto;
 }

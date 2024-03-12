@@ -117,11 +117,11 @@ header .headerInner ul.submenu a {
     }
 }
 
-// works
+/* project section */
 section#project {
     width: 100%;
     position: relative;
-    height: 1080px;
+    height: 880px;
 
     .pagename {
         @include pagename();
@@ -211,11 +211,13 @@ section#project {
 
 /* 모달창 배경 */
 .modalbg {
-    position: absolute;
+    position: fixed;
     background-color: rgb(0, 0, 0, 0.8);
     width: 100%;
-    height: 9999px;
-    top: -100px;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
     z-index: 99;
 }
@@ -223,18 +225,16 @@ section#project {
 /*모달창*/
 .modal {
     position: fixed;
-    top: 0px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: $grid;
     height: 720px;
     background-color: #fff;
     z-index: 9999;
-    position: absolute;
     box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
     display: none;
     overflow: hidden;
-
 
 }
 
@@ -282,15 +282,24 @@ section#project {
                     position: relative;
                     font-weight: 600;
                     font-size: 20px;
-
+                    transition: 0.5s;
+                    &:hover{
+                        color: #8A2BE2;
+                    }
+                    &:hover:before{
+                    right: 78%;
+                       background-color: #8A2BE2;
+                       
+                    }
                     &::before {
                         content: "";
                         position: absolute;
                         width: 16px;
-                        height: 1px;
+                        height: 2px;
                         background-color: #111;
                         top: 10px;
                         right: 0px;
+                        transition: 0.5s;
                     }
                 }
 
@@ -310,6 +319,7 @@ section#project {
                 }
 
                 .siteFull {
+
                     margin-top: 10px;
                     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
                     height: 320px;
@@ -364,17 +374,18 @@ section#project {
 
 
                 img {
-
+                    margin-top: 40px;
                     border-radius: 50%;
                     width: 40px;
                     height: 40px;
-                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
                 }
             }
 
         }
     }
 }
+
+
 
 /* skills */
 main section#skills {
@@ -453,12 +464,14 @@ main section#skills {
                         width: 90%;
                         height: 90%;
                         text-align: justify;
+
                         p {
                             text-align: center;
                             font-weight: 600;
                             @include title();
                             // font-size: 36px;
                         }
+
                         span {
                             @include contents();
                             font-size: 16px;
@@ -468,7 +481,7 @@ main section#skills {
                         }
 
 
-                      
+
 
 
                     }

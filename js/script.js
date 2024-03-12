@@ -50,12 +50,12 @@ $(document).ready(function () {
 
 
     // 모달창 열릴때 화면 y축 좌표고정
-    $(".details").on("click", function () {
-        // 스크롤 고정
-        $('html, body').animate({
-            scrollTop: 0
-        }, 400)
-    });
+    // $(".details").on("click", function () {
+    //     // 스크롤 고정
+    //     $('html, body').animate({
+    //         scrollTop: 0
+    //     }, 400)
+    // });
 
 
 
