@@ -99,6 +99,7 @@ ul.text {
 }
 ul.text .up {
   display: flex;
+  justify-content: center;
 }
 ul.text .up div {
   position: relative;

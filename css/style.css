@@ -435,13 +435,11 @@ main section#skills .skillsInner .skills {
   display: flex;
   justify-content: space-between;
   margin-top: 80px;
-  display: flex;
   flex-wrap: wrap;
 }
 main section#skills .skillsInner .skills .card {
   width: 32%;
   margin-top: 20px;
-  display: inline-block;
   transition: transform 1s;
   transform: perspective(800px) rotateY(0deg);
   background-color: #fff;
@@ -781,4 +779,11 @@ main section#Contact .contactInner .contactMe form .form .button {
   transform: translateX(-50%);
   left: 50%;
   font-family: "Noto Sans KR";
+}
+
+/* 반응형 mobile*/
+@media (max-width: 768px) {
+  body {
+    background-color: red;
+  }
 }/*# sourceMappingURL=style.css.map */
