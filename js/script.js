@@ -24,11 +24,15 @@ $(document).ready(function () {
         let hbmOn = $('.hbm>.hbmInner>img').attr("src");
         if (hbmOn == "./images/hbm.gif" | hbmOn == "./images/hbmrev.gif") {
             $('.hbm>.hbmInner>img').attr("src", "./images/hbmani.gif")
+            $('.hbmInner').css('box-shadow','0px 0px 0px #fff')
+            $('.mPagaName').css('display','none')
             $('header').css('right', '0');
 
 
         } else {
             $('.hbm>.hbmInner>img').attr("src", "./images/hbmrev.gif")
+            $('.hbmInner').css('box-shadow','')
+            $('.mPagaName').css('display','')
             $('header').css('right', '');
 
         }
@@ -64,7 +68,7 @@ $(document).ready(function () {
         $(".modal").css("display", "");
         $("body").css("overflow", "")
         $(".modalbg").css("display", "");
-
+       
         // 헴버거메뉴 보이기
         $(".hbm").css("display", "");
     });
@@ -330,6 +334,16 @@ $(document).ready(function () {
         scrollTop: 0,
         tools: ["./images/vs.svg"]
     });
+
+// 스크롤 위치확인
+    $(document).ready(function() {
+        $(window).on('scroll', function() {
+            var scrollTop = $(window).scrollTop();
+            var scrollLeft = $(window).scrollLeft();
+            console.log('Current vertical scroll position: ' + scrollTop);
+            console.log('Current horizontal scroll position: ' + scrollLeft);
+        });
+    });
 });
 
 
@@ -402,9 +416,30 @@ document.addEventListener("mousemove", function (e) {
 window.addEventListener("scroll", (event) => {
     let scrollY = this.scrollY;
     if (scrollY >= 4000) {
-        let textbgr = document.querySelector(".lightpen")
+        let textbgr = document.querySelector(".lightpen");
         textbgr.classList.add("lightpenOn");
 
+    }
+
+});
+
+window.addEventListener("scroll", (event) => {
+    let scrollY = this.scrollY;
+    if (scrollY < 2500) {
+        let mPagaName = document.querySelector(".mPagaName");
+        mPagaName.textContent = 'Project';
+    }
+    if (scrollY >= 2500) {
+        let mPagaName = document.querySelector(".mPagaName");
+        mPagaName.textContent = 'Skills';
+    }
+    if (scrollY >= 3200) {
+        let mPagaName = document.querySelector(".mPagaName");
+        mPagaName.textContent = 'About Me';
+    }
+    if (scrollY >= 4400) {
+        let mPagaName = document.querySelector(".mPagaName");
+        mPagaName.textContent = 'Contact Us';
     }
 
 });
