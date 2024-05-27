@@ -34,17 +34,30 @@ body {
 
 /*햄버거메뉴*/
 .hbm {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 998;
-    transition: 0.5s;
-    display: flex;
-    align-items: center;
+    // position: relative;
+
+    .hbmInner {
+        // position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 60px;
+        
+    }
+
+    
+
 
     img {
+        top: 10px;
+        right: 10px;
+        z-index: 998;
+        transition: 0.5s;
+        display: flex;
+        align-items: center;
+        position: fixed;
         width: 40px;
         height: 40px;
+       
     }
 }
 
@@ -283,14 +296,17 @@ section#project {
                     font-weight: 600;
                     font-size: 20px;
                     transition: 0.5s;
-                    &:hover{
+
+                    &:hover {
                         color: #8A2BE2;
                     }
-                    &:hover:before{
-                    right: 78%;
-                       background-color: #8A2BE2;
-                       
+
+                    &:hover:before {
+                        right: 78%;
+                        background-color: #8A2BE2;
+
                     }
+
                     &::before {
                         content: "";
                         position: absolute;
@@ -405,7 +421,7 @@ main section#skills {
             display: flex;
             justify-content: space-between;
             margin-top: 80px;
-           
+
             flex-wrap: wrap;
 
             .card {
@@ -679,7 +695,7 @@ main section#Contact {
                                 width: 100%;
                                 height: 200px;
                                 padding-top: 10px;
-                              
+
                                 background-color: #fff;
                                 border: 1px solid #000;
                                 box-sizing: border-box;
@@ -781,8 +797,149 @@ main section#Contact {
 
 /* 반응형 mobile*/
 @media (max-width:$mobile) {
-    body{
-        background-color: red;
+    body {
+        background-color: #fff;
+    }
+
+    // 햄버거버튼
+    .hbm {
+
+        .hbmInner {
+            background-color: #fff;
+            width: 100%;
+            height: 42px;
+            position: fixed;
+            z-index: 999999;
+            top: 0px;       }
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+    }
+
+    // header
+    header {
+        .headerInner {
+            width: 80%;
+
+        }
+    }
+
+    // 헤더 텍스트
+    header .headerInner ul.submenu a {
+        font-size: 48px;
+        font-weight: 600;
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 80%;
+            background-color: $main;
+            bottom: 10px;
+            z-index: -1;
+
+        }
+    }
+
+    /* 모바일 project section */
+    section#project {
+        width: 100%;
+        position: relative;
+        height: 4000px;
+
+
+
+        .portInner {
+            width: 95%;
+            
+
+            .works {
+                margin-top: 80px;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: space-between;
+                justify-content: space-between;
+
+                div:nth-child(4),
+                div:nth-child(7),
+                div:nth-child(8),
+                div:nth-child(11)
+                {
+                    display: none;
+                }
+
+                .worksBox {
+                    background-color: #fff;
+                    margin-bottom: 24px;
+                    width: 100%;
+                    height: 280px;
+                    box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
+                    overflow: hidden;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                    }
+
+                    &:hover>.imgInner {
+                        top: 50%;
+                        left: 50%;
+                        background: rgba(0, 0, 0, 0.8);
+                        transform: translate(-50%, -50%);
+                        transition: 0.7s;
+                    }
+
+                    .imgInner {
+                        position: absolute;
+                        left: 50%;
+                        top: -400px;
+                        width: 100%;
+                        height: 100%;
+                        transform: translateX(-50%);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        transition: 0.7s;
+
+
+                        h3 {
+                            color: #fff;
+                            text-align: center;
+                            font-style: normal;
+                            font-size: 30px;
+                            position: relative;
+                            font-weight: normal;
+                            font-family: "Noto Sans KR";
+                        }
+
+                        .iconBox {
+                            display: flex;
+                            width: 70%;
+                            justify-content: center;
+                            text-align: center;
+
+                            div {
+                                color: #fff;
+
+                                p {
+                                    margin-top: 8px;
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+        }
     }
 
 

@@ -21,14 +21,14 @@ $(document).ready(function () {
     // 햄버거버튼 클릭시 아이콘 전환 및 메뉴호출
     $('.hbm').on("click", function () {
 
-        let hbmOn = $('.hbm>img').attr("src");
+        let hbmOn = $('.hbm>.hbmInner>img').attr("src");
         if (hbmOn == "./images/hbm.gif" | hbmOn == "./images/hbmrev.gif") {
-            $('.hbm>img').attr("src", "./images/hbmani.gif")
+            $('.hbm>.hbmInner>img').attr("src", "./images/hbmani.gif")
             $('header').css('right', '0');
 
 
         } else {
-            $('.hbm>img').attr("src", "./images/hbmrev.gif")
+            $('.hbm>.hbmInner>img').attr("src", "./images/hbmrev.gif")
             $('header').css('right', '');
 
         }
