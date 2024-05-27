@@ -902,6 +902,140 @@ main section#Contact .contactInner .contactMe form .form .button {
   section#project .portInner .works .worksBox .imgInner .iconBox div p {
     margin-top: 8px;
   }
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+    overflow: hidden;
+  }
+  .modal .xbtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .modal .xbtn img {
+    width: 28px;
+    height: 28px;
+  }
+  .modal .modalInner {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal .modalInner a.leftContents {
+    margin-top: 100px;
+    width: 98%;
+    margin: 100px auto;
+  }
+  .modal .modalInner a.leftContents .textCover {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 50px;
+    justify-content: space-between;
+  }
+  .modal .modalInner a.leftContents .textCover h2 {
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    font-size: 36px;
+  }
+  .modal .modalInner a.leftContents .textCover .siteBtn {
+    font-family: "Noto Sans KR";
+    position: relative;
+    font-weight: 600;
+    font-size: 20px;
+    transition: 0.5s;
+  }
+  .modal .modalInner a.leftContents .textCover .siteBtn:hover {
+    color: #8A2BE2;
+  }
+  .modal .modalInner a.leftContents .textCover .siteBtn:hover:before {
+    right: 78%;
+    background-color: #8A2BE2;
+  }
+  .modal .modalInner a.leftContents .textCover .siteBtn::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #111;
+    top: 10px;
+    right: 0px;
+    transition: 0.5s;
+  }
+  .modal .modalInner a.leftContents .siteFullCover {
+    position: relative;
+  }
+  .modal .modalInner a.leftContents .siteFullCover i {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    animation: mousescroll 1s ease infinite;
+    font-size: 24px;
+  }
+  .modal .modalInner a.leftContents .siteFullCover .siteFull {
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    height: 320px;
+    overflow: hidden;
+    overflow: scroll;
+  }
+  .modal .modalInner a.leftContents .siteFullCover .siteFull::-webkit-scrollbar {
+    display: none;
+  }
+  .modal .modalInner a.leftContents .siteFullCover .siteFull img {
+    width: 100%;
+    outline: none;
+    display: block;
+  }
+  @keyframes mousescroll {
+    0% {
+      bottom: 20px;
+    }
+    100% {
+      bottom: 10px;
+    }
+  }
+  .modal .modalInner .rightContents {
+    width: 98%;
+  }
+  .modal .modalInner .rightContents div {
+    margin-bottom: 16px;
+  }
+  .modal .modalInner .rightContents span {
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.6;
+  }
+  .modal .modalInner .rightContents p {
+    margin-top: 7px;
+    font-family: "Inter";
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+  .modal .modalInner .rightContents .icon {
+    display: flex;
+    gap: 16px;
+  }
+  .modal .modalInner .rightContents .icon img {
+    margin-top: 40px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
   main section#skills {
     width: 100%;
     height: 1000px;

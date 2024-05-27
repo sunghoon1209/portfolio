@@ -505,14 +505,15 @@ main section#skills {
                 }
 
             }
-            .mSkill{
+
+            .mSkill {
                 display: none;
                 // background-color: red;
                 width: 100px;
                 height: 100px;
             }
 
-          
+
         }
 
     }
@@ -952,6 +953,181 @@ main section#Contact {
         }
     }
 
+    // 반응형에서 모달창
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+
+        z-index: 9999;
+        box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
+        display: none;
+        overflow: hidden;
+
+    }
+
+    .modal {
+        .xbtn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+
+            img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        .modalInner {
+
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            // align-items: center;
+            // justify-content: center;
+
+            a.leftContents {
+                margin-top: 100px;
+                width: 98%;
+                margin: 100px auto;
+                // height: 100%;
+               
+
+                .textCover {
+                    width: 100%;
+                    display: flex;
+                    margin-bottom: 20px;
+                    height: 50px;
+                    line-height: 50px;
+                    justify-content: space-between;
+
+                    h2 {
+                        font-family: "Noto Sans KR";
+
+                        font-weight: bold;
+                        font-size: 36px;
+                    }
+
+                    .siteBtn {
+                        font-family: "Noto Sans KR";
+
+                        position: relative;
+                        font-weight: 600;
+                        font-size: 20px;
+                        transition: 0.5s;
+
+                        &:hover {
+                            color: #8A2BE2;
+                        }
+
+                        &:hover:before {
+                            right: 78%;
+                            background-color: #8A2BE2;
+
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 16px;
+                            height: 2px;
+                            background-color: #111;
+                            top: 10px;
+                            right: 0px;
+                            transition: 0.5s;
+                        }
+                    }
+
+                }
+
+                .siteFullCover {
+                    position: relative;
+                    
+
+                    i {
+                        position: absolute;
+
+                        right: 30px;
+                        bottom: 30px;
+
+                        animation: mousescroll 1s ease infinite;
+                        font-size: 24px;
+                    }
+
+                    .siteFull {
+                        width: 100%;
+                        margin-top: 10px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        height: 320px;
+                        overflow: hidden;
+                        overflow: scroll;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        img {
+                            width: 100%;
+                            outline: none;
+                            display: block;
+
+
+                        }
+
+                        @keyframes mousescroll {
+                            0% {
+                                bottom: 20px;
+                            }
+
+                            100% {
+                                bottom: 10px;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .rightContents {
+                width: 98%;
+
+                div {
+                    margin-bottom: 16px;
+                }
+
+                span {
+                    @include title();
+                }
+
+                p {
+                    margin-top: 7px;
+                    @include contents();
+                }
+
+                .icon {
+                    display: flex;
+                    gap: 16px;
+
+
+                    img {
+                        margin-top: 40px;
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+            }
+        }
+    }
+
+
     // mobile 반응형 skill 영역
     main section#skills {
         width: 100%;
@@ -959,11 +1135,11 @@ main section#Contact {
 
         .pagename {
             @include pagename();
-           
+
         }
 
         .skillsInner {
-           width: 95%;
+            width: 95%;
 
             .skills {
                 // height: 40%;
@@ -978,14 +1154,15 @@ main section#Contact {
                     display: none;
 
                 }
+
                 // 모바일에선 skill 영역이 다르게 보임
-                .mSkill{
+                .mSkill {
                     display: block;
                     width: 100%;
                     height: 100px;
                     border-radius: 10px;
                     display: flex;
-                   
+
                     justify-content: space-between;
                     align-items: center;
                     box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
@@ -998,14 +1175,16 @@ main section#Contact {
                         height: 60px;
                         background-color: #fff;
                         padding: 10px;
+
                         // overflow-y: hidden;
-                        img{
-                           width: 48px;
+                        img {
+                            width: 48px;
                         }
-                       
-                        
+
+
                     }
-                    .mDescription{
+
+                    .mDescription {
                         width: 80%;
                     }
                 }
@@ -1014,15 +1193,15 @@ main section#Contact {
         }
     }
 
-     // mobile 반응형 about me 영역
-     main section#me {
+    // mobile 반응형 about me 영역
+    main section#me {
         width: 100%;
         height: 1080px;
-    
+
         .pagename {
-            @include pagename();    
+            @include pagename();
         }
-    
+
         .meInner {
             width: 95%;
             height: 100%;
@@ -1032,47 +1211,47 @@ main section#Contact {
             // justify-content: space-between;
             flex-direction: column;
             align-items: center;
-    
-    
+
+
             .meIntro {
-    
+
                 display: flex;
                 height: 100%;
                 width: 100%;
                 align-items: center;
                 justify-content: center;
-    
-    
+
+
                 .meImage {
-    
+
                     img {
                         max-width: 100%;
-    
+
                     }
                 }
-    
+
             }
-    
+
             .meDetails {
                 width: 100%;
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-    
+
                 ul {
                     margin-bottom: 40px;
-                    
-    
+
+
                     li {
-                        
+
                         &:nth-child(1) {
                             @include title();
                             margin-bottom: 6px;
                         }
-    
+
                         @include contents();
                         margin-top: 4px;
-    
+
                         i {
                             font-weight: 600;
                             display: block;
@@ -1083,18 +1262,18 @@ main section#Contact {
             }
         }
     }
-    
+
 
     // 모바일용 contatct 영역
     main section#Contact {
         width: 100%;
         height: 1080px;
         overflow: hidden;
-    
+
         .pagename {
             @include pagename();
         }
-    
+
         .contactInner {
             width: 95%;
             height: 880px;
@@ -1103,30 +1282,30 @@ main section#Contact {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-    
+
             .contactMe {
-    
+
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 10px;
-    
+
                 p {
                     width: 100%;
                     font-size: 40px;
                     text-align: center;
                     font-family: "Noto Sans Kr";
                     font-family: "KIMM_Light";
-    
+
                     .lightpenOn {
-    
+
                         position: relative;
-    
+
                         &::before {
                             content: "";
                             position: absolute;
                             background-color: $main;
-    
+
                             width: 1%;
                             bottom: 0;
                             top: 0;
@@ -1134,45 +1313,45 @@ main section#Contact {
                             animation: light 2s ease forwards;
                         }
                     }
-    
+
                     @keyframes light {
                         0% {
                             width: 0%;
                         }
-    
+
                         100% {
                             width: 100%;
                         }
                     }
                 }
-    
+
                 form {
-    
+
                     width: 100%;
                     color: #000;
-    
+
                     .form {
-    
+
                         cursor: none;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
                         align-items: center;
-    
+
                         div {
                             width: 100%;
                             height: 19%;
                             display: flex;
                             flex-direction: column;
                             gap: 10px;
-    
+
                             label {
                                 font-family: 'Noto Sans Kr';
                                 font-size: 20px;
                                 font-weight: 600;
                                 margin-right: 10px;
                             }
-    
+
                             input {
                                 cursor: none;
                                 border: none;
@@ -1182,20 +1361,20 @@ main section#Contact {
                                 height: 50px;
                                 background-color: #fff;
                                 border: 1px solid #000;
-    
+
                                 font-family: Inter;
-    
+
                                 font-size: 16px;
                                 font-weight: 400;
                                 padding-left: 10px;
                                 margin-bottom: 20px;
                                 box-sizing: border-box;
                             }
-    
-    
+
+
                             &:nth-child(4) {
                                 height: 50%;
-    
+
                                 textarea {
                                     border: none;
                                     border-radius: 5px;
@@ -1204,7 +1383,7 @@ main section#Contact {
                                     width: 100%;
                                     height: 200px;
                                     padding-top: 10px;
-    
+
                                     background-color: #fff;
                                     border: 1px solid #000;
                                     box-sizing: border-box;
@@ -1213,18 +1392,18 @@ main section#Contact {
                                     font-weight: 400;
                                     padding-left: 10px;
                                     margin-bottom: 20px;
-    
+
                                 }
-    
+
                             }
-    
+
                         }
-    
+
                         .button {
                             cursor: none;
                             width: 180px;
                             height: 50px;
-    
+
                             transition: 0.5s;
                             outline: none;
                             background-color: #fff;
@@ -1232,7 +1411,7 @@ main section#Contact {
                             border: none;
                             border-radius: 5px;
                             font-family: 'Noto Sans Kr';
-    
+
                             font-size: 1.5rem;
                             font-weight: 600;
                             border: 1px solid #000;
