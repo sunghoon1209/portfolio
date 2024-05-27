@@ -506,6 +506,11 @@ main section#skills .skillsInner .skills .card .back .backInner span {
   font-size: 16px;
   text-align: left;
 }
+main section#skills .skillsInner .skills .mSkill {
+  display: none;
+  width: 100px;
+  height: 100px;
+}
 
 /* section */
 main section#me {
@@ -788,6 +793,8 @@ main section#Contact .contactInner .contactMe form .form .button {
 @media (max-width: 768px) {
   body {
     background-color: #fff;
+    width: 100%;
+    overflow-x: hidden;
   }
   .hbm .hbmInner {
     background-color: #fff;
@@ -821,7 +828,7 @@ main section#Contact .contactInner .contactMe form .form .button {
   section#project {
     width: 100%;
     position: relative;
-    height: 4000px;
+    height: 2800px;
   }
   section#project .portInner {
     width: 95%;
@@ -895,5 +902,69 @@ main section#Contact .contactInner .contactMe form .form .button {
   }
   section#project .portInner .works .worksBox .imgInner .iconBox div p {
     margin-top: 8px;
+  }
+  main section#skills {
+    width: 100%;
+    height: 1800px;
+  }
+  main section#skills .pagename {
+    text-align: center;
+    margin-top: 60px;
+  }
+  main section#skills .pagename span {
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+    color: #111;
+    font-family: "KIMM_Bold";
+    position: relative;
+    /* 페이지 제목 사각형*/
+  }
+  main section#skills .pagename span:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #B3A9E4;
+    top: 0px;
+    right: -20px;
+  }
+  main section#skills .skillsInner {
+    width: 95%;
+  }
+  main section#skills .skillsInner .skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  main section#skills .skillsInner .skills .card {
+    display: none;
+  }
+  main section#skills .skillsInner .skills .mSkill {
+    display: block;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  main section#skills .skillsInner .skills .mSkill .mTools {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    padding: 10px;
+  }
+  main section#skills .skillsInner .skills .mSkill .mTools img {
+    width: 48px;
+  }
+  main section#skills .skillsInner .skills .mSkill .mDescription {
+    width: 80%;
   }
 }/*# sourceMappingURL=style.css.map */
