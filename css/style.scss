@@ -808,7 +808,7 @@ main section#Contact {
     body {
         background-color: #fff;
         width: 100%;
-        overflow-x: hidden;
+        // overflow-x: hidden;
     }
 
     // 햄버거버튼
@@ -955,10 +955,11 @@ main section#Contact {
     // mobile 반응형 skill 영역
     main section#skills {
         width: 100%;
-        height: 1800px;
+        height: 1000px;
 
         .pagename {
             @include pagename();
+           
         }
 
         .skillsInner {
@@ -1013,5 +1014,234 @@ main section#Contact {
         }
     }
 
+     // mobile 반응형 about me 영역
+     main section#me {
+        width: 100%;
+        height: 1080px;
+    
+        .pagename {
+            @include pagename();    
+        }
+    
+        .meInner {
+            width: 95%;
+            height: 100%;
+            position: relative;
+            margin: 0px auto;
+            display: flex;
+            // justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+    
+    
+            .meIntro {
+    
+                display: flex;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+    
+    
+                .meImage {
+    
+                    img {
+                        max-width: 100%;
+    
+                    }
+                }
+    
+            }
+    
+            .meDetails {
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+    
+                ul {
+                    margin-bottom: 40px;
+                    
+    
+                    li {
+                        
+                        &:nth-child(1) {
+                            @include title();
+                            margin-bottom: 6px;
+                        }
+    
+                        @include contents();
+                        margin-top: 4px;
+    
+                        i {
+                            font-weight: 600;
+                            display: block;
+                            margin-bottom: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+
+    // 모바일용 contatct 영역
+    main section#Contact {
+        width: 100%;
+        height: 1080px;
+        overflow: hidden;
+    
+        .pagename {
+            @include pagename();
+        }
+    
+        .contactInner {
+            width: 95%;
+            height: 880px;
+            position: relative;
+            margin: 100px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .contactMe {
+    
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+    
+                p {
+                    width: 100%;
+                    font-size: 40px;
+                    text-align: center;
+                    font-family: "Noto Sans Kr";
+                    font-family: "KIMM_Light";
+    
+                    .lightpenOn {
+    
+                        position: relative;
+    
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            background-color: $main;
+    
+                            width: 1%;
+                            bottom: 0;
+                            top: 0;
+                            z-index: -1;
+                            animation: light 2s ease forwards;
+                        }
+                    }
+    
+                    @keyframes light {
+                        0% {
+                            width: 0%;
+                        }
+    
+                        100% {
+                            width: 100%;
+                        }
+                    }
+                }
+    
+                form {
+    
+                    width: 100%;
+                    color: #000;
+    
+                    .form {
+    
+                        cursor: none;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+    
+                        div {
+                            width: 100%;
+                            height: 19%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+    
+                            label {
+                                font-family: 'Noto Sans Kr';
+                                font-size: 20px;
+                                font-weight: 600;
+                                margin-right: 10px;
+                            }
+    
+                            input {
+                                cursor: none;
+                                border: none;
+                                border-radius: 5px;
+                                outline: none;
+                                width: 100%;
+                                height: 50px;
+                                background-color: #fff;
+                                border: 1px solid #000;
+    
+                                font-family: Inter;
+    
+                                font-size: 16px;
+                                font-weight: 400;
+                                padding-left: 10px;
+                                margin-bottom: 20px;
+                                box-sizing: border-box;
+                            }
+    
+    
+                            &:nth-child(4) {
+                                height: 50%;
+    
+                                textarea {
+                                    border: none;
+                                    border-radius: 5px;
+                                    outline: none;
+                                    cursor: none;
+                                    width: 100%;
+                                    height: 200px;
+                                    padding-top: 10px;
+    
+                                    background-color: #fff;
+                                    border: 1px solid #000;
+                                    box-sizing: border-box;
+                                    font-family: 'Noto Sans Kr';
+                                    font-size: 1rem;
+                                    font-weight: 400;
+                                    padding-left: 10px;
+                                    margin-bottom: 20px;
+    
+                                }
+    
+                            }
+    
+                        }
+    
+                        .button {
+                            cursor: none;
+                            width: 180px;
+                            height: 50px;
+    
+                            transition: 0.5s;
+                            outline: none;
+                            background-color: #fff;
+                            color: #000;
+                            border: none;
+                            border-radius: 5px;
+                            font-family: 'Noto Sans Kr';
+    
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            border: 1px solid #000;
+                            box-sizing: border-box;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }

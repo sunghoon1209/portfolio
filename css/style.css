@@ -794,7 +794,6 @@ main section#Contact .contactInner .contactMe form .form .button {
   body {
     background-color: #fff;
     width: 100%;
-    overflow-x: hidden;
   }
   .hbm .hbmInner {
     background-color: #fff;
@@ -905,7 +904,7 @@ main section#Contact .contactInner .contactMe form .form .button {
   }
   main section#skills {
     width: 100%;
-    height: 1800px;
+    height: 1000px;
   }
   main section#skills .pagename {
     text-align: center;
@@ -966,5 +965,224 @@ main section#Contact .contactInner .contactMe form .form .button {
   }
   main section#skills .skillsInner .skills .mSkill .mDescription {
     width: 80%;
+  }
+  main section#me {
+    width: 100%;
+    height: 1080px;
+  }
+  main section#me .pagename {
+    text-align: center;
+    margin-top: 60px;
+  }
+  main section#me .pagename span {
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+    color: #111;
+    font-family: "KIMM_Bold";
+    position: relative;
+    /* 페이지 제목 사각형*/
+  }
+  main section#me .pagename span:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #B3A9E4;
+    top: 0px;
+    right: -20px;
+  }
+  main section#me .meInner {
+    width: 95%;
+    height: 100%;
+    position: relative;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main section#me .meInner .meIntro {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  main section#me .meInner .meIntro .meImage img {
+    max-width: 100%;
+  }
+  main section#me .meInner .meDetails {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  main section#me .meInner .meDetails ul {
+    margin-bottom: 40px;
+  }
+  main section#me .meInner .meDetails ul li {
+    font-family: "Inter";
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+  main section#me .meInner .meDetails ul li:nth-child(1) {
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+  main section#me .meInner .meDetails ul li i {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+  }
+  main section#Contact {
+    width: 100%;
+    height: 1080px;
+    overflow: hidden;
+  }
+  main section#Contact .pagename {
+    text-align: center;
+    margin-top: 60px;
+  }
+  main section#Contact .pagename span {
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+    color: #111;
+    font-family: "KIMM_Bold";
+    position: relative;
+    /* 페이지 제목 사각형*/
+  }
+  main section#Contact .pagename span:before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #B3A9E4;
+    top: 0px;
+    right: -20px;
+  }
+  main section#Contact .contactInner {
+    width: 95%;
+    height: 880px;
+    position: relative;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  main section#Contact .contactInner .contactMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  main section#Contact .contactInner .contactMe p {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Noto Sans Kr";
+    font-family: "KIMM_Light";
+  }
+  main section#Contact .contactInner .contactMe p .lightpenOn {
+    position: relative;
+  }
+  main section#Contact .contactInner .contactMe p .lightpenOn::before {
+    content: "";
+    position: absolute;
+    background-color: #B3A9E4;
+    width: 1%;
+    bottom: 0;
+    top: 0;
+    z-index: -1;
+    animation: light 2s ease forwards;
+  }
+  @keyframes light {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  main section#Contact .contactInner .contactMe form {
+    width: 100%;
+    color: #000;
+  }
+  main section#Contact .contactInner .contactMe form .form {
+    cursor: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main section#Contact .contactInner .contactMe form .form div {
+    width: 100%;
+    height: 19%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  main section#Contact .contactInner .contactMe form .form div label {
+    font-family: "Noto Sans Kr";
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+  main section#Contact .contactInner .contactMe form .form div input {
+    cursor: none;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    border: 1px solid #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  main section#Contact .contactInner .contactMe form .form div:nth-child(4) {
+    height: 50%;
+  }
+  main section#Contact .contactInner .contactMe form .form div:nth-child(4) textarea {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: none;
+    width: 100%;
+    height: 200px;
+    padding-top: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    font-family: "Noto Sans Kr";
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+  main section#Contact .contactInner .contactMe form .form .button {
+    cursor: none;
+    width: 180px;
+    height: 50px;
+    transition: 0.5s;
+    outline: none;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-family: "Noto Sans Kr";
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 1px solid #000;
+    box-sizing: border-box;
   }
 }/*# sourceMappingURL=style.css.map */
