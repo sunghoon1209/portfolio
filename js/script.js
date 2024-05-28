@@ -424,21 +424,22 @@ window.addEventListener("scroll", (event) => {
 
 });
 
+// 반응형에서 왼쪽위에 section 이름 나오게 하는데
 window.addEventListener("scroll", (event) => {
     let scrollY = this.scrollY;
-    if (scrollY < 3300) {
+    if (scrollY < 2800) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'Project';
     }
-    if (scrollY >= 3300) {
+    if (scrollY >= 2800) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'Skills';
     }
-    if (scrollY >= 4100) {
+    if (scrollY >= 3600) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'About Me';
     }
-    if (scrollY >= 5200) {
+    if (scrollY >= 4700) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'Contact Us';
     }

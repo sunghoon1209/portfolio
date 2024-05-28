@@ -847,7 +847,7 @@ main section#Contact .contactInner .contactMe form .form .button {
   section#project {
     width: 100%;
     position: relative;
-    height: 3300px;
+    height: 2800px;
   }
   section#project .pagename {
     display: none;
@@ -874,7 +874,7 @@ main section#Contact .contactInner .contactMe form .form .button {
     background-color: #fff;
     margin-bottom: 24px;
     width: 100%;
-    height: 300px;
+    height: 280px;
     box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
     overflow: visible;
     position: relative;
@@ -929,7 +929,7 @@ main section#Contact .contactInner .contactMe form .form .button {
   .modal .xbtn {
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 40px;
   }
   .modal .xbtn img {
     width: 28px;
@@ -945,8 +945,9 @@ main section#Contact .contactInner .contactMe form .form .button {
   }
   .modal .modalInner a.leftContents {
     margin-top: 100px;
-    width: 98%;
-    margin: 100px auto;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
   }
   .modal .modalInner a.leftContents .textCover {
     width: 100%;
@@ -1021,7 +1022,7 @@ main section#Contact .contactInner .contactMe form .form .button {
     }
   }
   .modal .modalInner .rightContents {
-    width: 98%;
+    width: 80%;
   }
   .modal .modalInner .rightContents div {
     margin-bottom: 16px;
@@ -1071,28 +1072,31 @@ main section#Contact .contactInner .contactMe form .form .button {
   }
   main section#skills .skillsInner .skills .mSkill {
     display: block;
-    width: 100%;
+    width: calc(100% - 20px);
     height: 100px;
     border-radius: 10px;
     display: flex;
+    padding: 0px 10px 0px;
     justify-content: space-between;
     align-items: center;
     box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
   }
   main section#skills .skillsInner .skills .mSkill .mTools {
+    background-color: red;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 50%;
-    width: 60px;
+    width: 20%;
     height: 60px;
     background-color: #fff;
-    padding: 10px;
   }
   main section#skills .skillsInner .skills .mSkill .mTools img {
     width: 48px;
+    height: 48px;
   }
   main section#skills .skillsInner .skills .mSkill .mDescription {
-    width: 80%;
+    width: 75%;
   }
   main section#me {
     width: 100%;
@@ -1173,7 +1177,7 @@ main section#Contact .contactInner .contactMe form .form .button {
   }
   main section#Contact .contactInner .contactMe p {
     width: 100%;
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
     font-family: "Noto Sans Kr";
     font-family: "KIMM_Light";
