@@ -41,8 +41,9 @@ $(document).ready(function () {
     });
     // 헤더메뉴 클릭시 헴버거 메뉴 변경 및 메뉴 닫힘
     $(".submenu li").on("click", function () {
-        $('.hbm>img').attr("src", "./images/hbmrev.gif")
-        $('header').css('right', '');
+        $('.hbm>.hbmInner>img').attr("src", "./images/hbmrev.gif")
+        $('header').css('right', '')
+        $('.mPagaName').css('display','');
     });
 
 
@@ -425,19 +426,19 @@ window.addEventListener("scroll", (event) => {
 
 window.addEventListener("scroll", (event) => {
     let scrollY = this.scrollY;
-    if (scrollY < 2500) {
+    if (scrollY < 3300) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'Project';
     }
-    if (scrollY >= 2500) {
+    if (scrollY >= 3300) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'Skills';
     }
-    if (scrollY >= 3200) {
+    if (scrollY >= 4100) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'About Me';
     }
-    if (scrollY >= 4400) {
+    if (scrollY >= 5200) {
         let mPagaName = document.querySelector(".mPagaName");
         mPagaName.textContent = 'Contact Us';
     }

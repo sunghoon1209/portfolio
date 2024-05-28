@@ -828,7 +828,7 @@ main section#Contact .contactInner .contactMe form .form .button {
     margin-right: 2%;
   }
   header .headerInner {
-    width: 80%;
+    width: 90%;
   }
   header .headerInner ul.submenu a {
     font-size: 48px;
@@ -847,13 +847,13 @@ main section#Contact .contactInner .contactMe form .form .button {
   section#project {
     width: 100%;
     position: relative;
-    height: 2800px;
+    height: 3300px;
   }
   section#project .pagename {
     display: none;
   }
   section#project .portInner {
-    width: 70%;
+    width: 80%;
   }
   section#project .portInner .works {
     margin-top: 80px;
@@ -874,7 +874,7 @@ main section#Contact .contactInner .contactMe form .form .button {
     background-color: #fff;
     margin-bottom: 24px;
     width: 100%;
-    height: 280px;
+    height: 340px;
     box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.3);
     overflow: visible;
     position: relative;
@@ -891,8 +891,8 @@ main section#Contact .contactInner .contactMe form .form .button {
     font-weight: 400;
   }
   section#project .portInner .works .worksBox img {
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    height: 340px;
     display: block;
     -o-object-fit: contain;
        object-fit: contain;
@@ -1059,7 +1059,7 @@ main section#Contact .contactInner .contactMe form .form .button {
     display: none;
   }
   main section#skills .skillsInner {
-    width: 70%;
+    width: 80%;
   }
   main section#skills .skillsInner .skills {
     width: 100%;
@@ -1104,7 +1104,7 @@ main section#Contact .contactInner .contactMe form .form .button {
     display: none;
   }
   main section#me .meInner {
-    width: 70%;
+    width: 80%;
     height: 100%;
     position: relative;
     margin: 0px auto;
@@ -1159,7 +1159,7 @@ main section#Contact .contactInner .contactMe form .form .button {
     display: none;
   }
   main section#Contact .contactInner {
-    width: 70%;
+    width: 80%;
     height: 880px;
     position: relative;
     margin: 100px auto;
