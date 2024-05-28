@@ -152,7 +152,14 @@ section#project {
             align-content: space-between;
             justify-content: space-between;
 
+
+            .mPortName {
+                width: 100px;
+
+            }
+
             .worksBox {
+
                 background-color: #fff;
                 margin-bottom: 18px;
                 width: 24%;
@@ -160,6 +167,10 @@ section#project {
                 box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
                 overflow: hidden;
                 position: relative;
+
+                .mPortName {
+                    display: none;
+                }
 
                 img {
                     width: 100%;
@@ -820,7 +831,7 @@ main section#Contact {
         .hbmInner {
             background-color: #fff;
             width: 100%;
-           
+
             height: 60px;
             position: fixed;
             z-index: 999999;
@@ -877,9 +888,9 @@ main section#Contact {
 
     /* 모바일 project section */
     section#project {
-        width: 100%;
+        width:100%;
         position: relative;
-        height: 2400px;
+        height: 2800px;
 
         .pagename {
             display: none;
@@ -887,8 +898,7 @@ main section#Contact {
 
 
         .portInner {
-            width: 95%;
-
+            width: 70%;
 
             .works {
                 margin-top: 80px;
@@ -896,6 +906,8 @@ main section#Contact {
                 flex-wrap: wrap;
                 align-content: space-between;
                 justify-content: space-between;
+                flex-direction: column;
+                gap: 50px;
 
                 div:nth-child(4),
                 div:nth-child(7),
@@ -910,53 +922,42 @@ main section#Contact {
                     width: 100%;
                     height: 280px;
                     box-shadow: 1px 0px 5px rgb(0, 0, 0, 0.3);
-                    overflow: hidden;
+                    overflow: visible;
                     position: relative;
+
+                    .mPortName {
+                        display: block;
+                        width: 240px;                       
+                        position: absolute;
+                        bottom: -32px;
+                        font-size: 20px;
+                        transform: translateX(-50%);
+                        left: 50%;
+                        text-align: center;
+                        font-weight: 400;
+                    }
 
                     img {
                         width: 100%;
                         height: 100%;
                         display: block;
-                        object-fit: cover;
+                        object-fit: contain;
                     }
 
                     &:hover>.imgInner {
-                        top: 50%;
-                        left: 50%;
-                        background: rgba(0, 0, 0, 0.8);
-                        transform: translate(-50%, -50%);
-                        transition: 0.7s;
+                       display: none;
                     }
 
                     .imgInner {
-                        position: absolute;
-                        left: 50%;
-                        top: -400px;
-                        width: 100%;
-                        height: 100%;
-                        transform: translateX(-50%);
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        align-items: center;
-                        transition: 0.7s;
+                    display: none;
 
 
                         h3 {
-                            color: #fff;
-                            text-align: center;
-                            font-style: normal;
-                            font-size: 30px;
-                            position: relative;
-                            font-weight: normal;
-                            font-family: "Noto Sans KR";
+                         display: none;
                         }
 
                         .iconBox {
-                            display: flex;
-                            width: 70%;
-                            justify-content: center;
-                            text-align: center;
+                     display: none;
 
                             div {
                                 color: #fff;
@@ -975,6 +976,8 @@ main section#Contact {
 
         }
     }
+
+    // 반응형에서 제목 보이게
 
     // 반응형에서 모달창
     .modal {
@@ -1164,7 +1167,7 @@ main section#Contact {
         }
 
         .skillsInner {
-            width: 95%;
+            width: 70%;
 
             .skills {
                 // height: 40%;
@@ -1228,7 +1231,7 @@ main section#Contact {
         }
 
         .meInner {
-            width: 95%;
+            width: 70%;
             height: 100%;
             position: relative;
             margin: 0px auto;
@@ -1300,7 +1303,7 @@ main section#Contact {
         }
 
         .contactInner {
-            width: 95%;
+            width: 70%;
             height: 880px;
             position: relative;
             margin: 100px auto;
@@ -1317,7 +1320,7 @@ main section#Contact {
 
                 p {
                     width: 100%;
-                    font-size: 40px;
+                    font-size: 30px;
                     text-align: center;
                     font-family: "Noto Sans Kr";
                     font-family: "KIMM_Light";
